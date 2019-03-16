@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="Basketball_Project" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/Basketball_Project" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/Gideon/Documents/csci191-3/Common/bin" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/Basketball_Project" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="C:/Users/Gideon/Documents/csci191-3/Common/bin" />
+				<Option object_output="obj/Release/" />
+				<Option type="0" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+			<Add directory="include" />
+			<Add directory="C:/Users/Gideon/Documents/csci191-3/Common/include" />
+		</Compiler>
+		<Linker>
+			<Add library="../Common/lib/libSOIL.a" />
+			<Add library="glut32" />
+			<Add library="opengl32" />
+			<Add library="glu32" />
+			<Add library="winmm" />
+			<Add library="gdi32" />
+			<Add directory="C:/Users/Gideon/Documents/csci191-3/Common/lib" />
+		</Linker>
+		<Unit filename="include/GLLight.h" />
+		<Unit filename="include/GLScene.h" />
+		<Unit filename="include/Inputs.h" />
+		<Unit filename="include/Model.h" />
+		<Unit filename="include/Parallax.h" />
+		<Unit filename="include/Player.h" />
+		<Unit filename="include/TextureLoader.h" />
+		<Unit filename="include/Timer.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="src/GLLight.cpp" />
+		<Unit filename="src/GLScene.cpp" />
+		<Unit filename="src/Inputs.cpp" />
+		<Unit filename="src/Model.cpp" />
+		<Unit filename="src/Parallax.cpp" />
+		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/TextureLoader.cpp" />
+		<Unit filename="src/Timer.cpp" />
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>
