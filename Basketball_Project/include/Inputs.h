@@ -29,6 +29,8 @@ class Inputs
         bool mouse_Translate;
         bool mouse_Rotate;
 
+        bool move_left, move_right, move_up, move_down;
+
         WPARAM wParam; // needed for windows programming - passed to keyboard
 
     protected:

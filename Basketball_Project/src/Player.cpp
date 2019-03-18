@@ -112,5 +112,9 @@ void Player::playerActions()
             break;
         }
     }
+    if (action == "stand") {
+        xMin = 0.0;
+        xMax = 0.1;
+    }
 }
 

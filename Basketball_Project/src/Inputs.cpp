@@ -10,6 +10,10 @@ Inputs::Inputs()
     mouse_Translate = 0;
     mouse_Rotate = 0;
 
+    move_left = false;
+    move_right = false;
+    move_up = false;
+    move_down = false;
 }
 
 Inputs::~Inputs()
@@ -20,50 +24,41 @@ Inputs::~Inputs()
 void Inputs::keyPressed(Model * Mdl)
 {
     switch(wParam) {
-
-    case 65:
-    //case VK_LEFT:
-        Mdl->RotateX += 2.0;
+    case VK_LEFT:
+        move_left = true;
         break;
-
-    case 68:
-    //case VK_RIGHT:
-        Mdl->RotateX -= 2.0;
+    case VK_RIGHT:
+        move_right = true;
         break;
-
-    case 87:
-    //case VK_UP:
-        Mdl->RotateY += 2.0;
+    case VK_UP:
+        move_up = true;
         break;
-
-    case 83:
-    //case VK_DOWN:
-        Mdl->RotateY -= 2.0;
+    case VK_DOWN:
+        move_down = true;
         break;
-
-    case VK_ADD:
-        Mdl->zoom += 1.0;
-        break;
-
-    case VK_SUBTRACT:
-        Mdl->zoom -= 1.0;
-        break;
-
-    case 69:
-        Mdl->RotateZ += 2.0;
-        break;
-
-    case 81:
-        Mdl->RotateZ -= 2.0;
-        break;
-
     default: break;
     }
 }
 
 void Inputs::keyUp()
 {
-
+    move_left = false;
+    move_right = false;
+    switch(wParam) {
+    case VK_LEFT:
+        move_left = false;
+        break;
+    case VK_RIGHT:
+        move_right = false;
+        break;
+    case VK_UP:
+        move_up = false;
+        break;
+    case VK_DOWN:
+        move_down = false;
+        break;
+    default: break;
+    }
 }
 
 void Inputs::mouseEventDown(Model * Mdl, double x, double y)
@@ -135,10 +130,19 @@ void Inputs::keyEnv(Parallax * plx, float speed)
         break;
     }
     */
+    if (move_right) {
+        plx->scroll("right",speed);
+    }
+    else {
+        if (move_left) {
+            plx->scroll("left",speed);
+        }
+    }
 }
 
 void Inputs::playerInput(Player* ply)
 {
+    /*
     switch(wParam) {
     case VK_LEFT:
         ply->action = "walk_left";
@@ -146,5 +150,16 @@ void Inputs::playerInput(Player* ply)
     case VK_RIGHT:
         ply->action = "walk_right";
         break;
+    }*/
+    if (move_right) {
+        ply->action = "walk_right";
+    }
+    else {
+        if (move_left) {
+            ply->action = "walk_left";
+        }
+        else {
+            ply->action = "stand";
+        }
     }
 }

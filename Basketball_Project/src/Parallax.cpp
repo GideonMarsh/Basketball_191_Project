@@ -6,7 +6,7 @@ TextureLoader *bgTexture = new TextureLoader();
 Parallax::Parallax()
 {
     //ctor
-    xMax = 1.0;
+    xMax = 0.4;
     xMin = 0.0;
     yMax = 1.0;
     yMin = 0.0;
@@ -44,6 +44,7 @@ void Parallax::parallaxInit(char* filename)
 
 void Parallax::scroll(string direction, float speed)
 {
+    /* Unused
     if (direction == "up") {
         yMin = yMin - speed;
         yMax = yMax - speed;
@@ -52,11 +53,12 @@ void Parallax::scroll(string direction, float speed)
         yMin = yMin + speed;
         yMax = yMax + speed;
     }
-    if (direction == "left") {
+    */
+    if (direction == "left" && xMin >= 0.0) {
         xMin = xMin - speed;
         xMax = xMax - speed;
     }
-    if (direction == "right") {
+    if (direction == "right" && xMax <= 1.0) {
         xMin = xMin + speed;
         xMax = xMax + speed;
     }

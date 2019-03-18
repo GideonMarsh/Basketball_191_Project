@@ -39,7 +39,7 @@ GLint GLScene::initGL()
     //Mdl->modelInit("images/teapot.png");
     //Mdl->modelInit("images/teapot_alt.jpg");
 
-    Plx->parallaxInit("images/parallax.jpg");
+    Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/player.png");
 
     return true;
@@ -62,9 +62,12 @@ GLint GLScene::drawGLScene()
 
     glTranslated(-0.5,-0.5,-1);
     Ply->drawPlayer();
+
+    KbMs->playerInput(Ply);
     Ply->playerActions();
 
-    Plx->scroll("right",0.002);
+    //Plx->scroll("right",0.002);
+    KbMs->keyEnv(Plx,0.003);
 }
 
 GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)
@@ -90,13 +93,11 @@ int GLScene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 		{
             KbMs->wParam = wParam;
             KbMs->keyPressed(Mdl);     // pass the thing that is manipulated by the keys into keyPressed
-            KbMs->keyEnv(Plx,0.005);
-            KbMs->playerInput(Ply);
             break;
 		}
-
 		case WM_KEYUP:								// Has A Key Been Released?
 		{
+            KbMs->keyUp();
             break;
 		}
 
