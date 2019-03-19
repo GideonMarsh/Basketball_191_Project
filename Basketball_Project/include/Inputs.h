@@ -23,6 +23,8 @@ class Inputs
         void keyEnv(Parallax *,float);                    // for parallax movement (moving the background using the keys)
         void playerInput(Player *);
 
+        void checkKeyDown();
+
         double prev_mouse_X;
         double prev_mouse_Y;
 

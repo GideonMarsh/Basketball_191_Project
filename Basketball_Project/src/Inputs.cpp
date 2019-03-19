@@ -23,6 +23,7 @@ Inputs::~Inputs()
 
 void Inputs::keyPressed(Model * Mdl)
 {
+    /*
     switch(wParam) {
     case VK_LEFT:
         move_left = true;
@@ -37,13 +38,12 @@ void Inputs::keyPressed(Model * Mdl)
         move_down = true;
         break;
     default: break;
-    }
+    }*/
 }
 
 void Inputs::keyUp()
 {
-    move_left = false;
-    move_right = false;
+    /*
     switch(wParam) {
     case VK_LEFT:
         move_left = false;
@@ -58,7 +58,7 @@ void Inputs::keyUp()
         move_down = false;
         break;
     default: break;
-    }
+    }*/
 }
 
 void Inputs::mouseEventDown(Model * Mdl, double x, double y)
@@ -139,7 +139,14 @@ void Inputs::keyEnv(Parallax * plx, float speed)
         }
     }
 }
-
+// Checks to see if the given key is being pressed down and modifies the movement variables accordingly
+void Inputs::checkKeyDown()
+{
+    move_left = (GetKeyState(VK_LEFT) & 0x8000) ? true : false;
+    move_right = (GetKeyState(VK_RIGHT) & 0x8000) ? true : false;
+    move_up = (GetKeyState(VK_UP) & 0x8000) ? true : false;
+    move_down = (GetKeyState(VK_DOWN) & 0x8000) ? true : false;
+}
 void Inputs::playerInput(Player* ply)
 {
     /*

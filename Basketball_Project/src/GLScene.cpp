@@ -63,6 +63,8 @@ GLint GLScene::drawGLScene()
     glTranslated(-0.5,-0.5,-1);
     Ply->drawPlayer();
 
+    KbMs->checkKeyDown();
+
     KbMs->playerInput(Ply);
     Ply->playerActions();
 
@@ -100,7 +102,6 @@ int GLScene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
             KbMs->keyUp();
             break;
 		}
-
 		case WM_LBUTTONDOWN:
         {
             KbMs->wParam = wParam;
