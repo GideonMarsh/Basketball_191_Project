@@ -60,7 +60,7 @@ GLint GLScene::drawGLScene()
     Plx->drawSquare(screenWidth,screenHeight);
     glPopMatrix();
 
-    glTranslated(-0.5,-0.5,-1);
+    glTranslated(Ply->xPos,Ply->yPos,Ply->zPos);
     Ply->drawPlayer();
 
     KbMs->checkKeyDown();
@@ -69,7 +69,7 @@ GLint GLScene::drawGLScene()
     Ply->playerActions();
 
     //Plx->scroll("right",0.002);
-    KbMs->keyEnv(Plx,0.003);
+    KbMs->keyEnv(Plx,0.004);
 }
 
 GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)

@@ -169,4 +169,12 @@ void Inputs::playerInput(Player* ply)
             ply->action = "stand";
         }
     }
+    if (move_up) {
+        ply->playerTranslate(0.0, 0.025);
+    }
+    else {
+        if (move_down) {
+            ply->playerTranslate(0.0, -0.025);
+        }
+    }
 }

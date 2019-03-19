@@ -18,6 +18,11 @@ Player::Player()
     xMax = 0.0;
     yMax = 0.0;
 
+    //Starting position for player
+    xPos = -0.2;
+    yPos = -0.3;
+    zPos = -1;
+
     actionCounter = 0;
     action = "walk_left";
 }
@@ -66,6 +71,24 @@ void Player::playerInit(char *filename)
     yMax = 0.11;
 
     Time->start();
+}
+
+void Player::playerTranslate(float xChange, float yChange)
+{
+    /*xPos += xChange;
+    if (xPos < 0.0) {
+        xPos = 0.0;
+    }
+    if (xPos > 1.0) {
+        xPos = 1.0;
+    }*/
+    yPos += yChange;
+    if (yPos < -1.0) {
+        yPos = -1.0;
+    }
+    if (yPos > 0.5) {
+        yPos = 0.5;
+    }
 }
 
 void Player::playerActions()

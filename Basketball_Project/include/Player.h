@@ -19,9 +19,11 @@ class Player
         void drawPlayer();
         void playerInit(char *);
         void playerActions();
+        void playerTranslate(float, float);
 
         vec vertices[4];              // boundary for player hitbox
         float xMin, yMin, xMax, yMax;
+        float xPos, yPos, zPos;
 
         int actionCounter;
         string action;
