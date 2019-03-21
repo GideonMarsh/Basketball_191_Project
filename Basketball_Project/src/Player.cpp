@@ -93,6 +93,7 @@ void Player::playerTranslate(float xChange, float yChange)
 
 void Player::playerActions()
 {
+
     if (action == "walk_right") {
         if (Time->getTicks() > 120) {
             actionCounter += 1;

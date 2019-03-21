@@ -33,7 +33,7 @@
 		<Compiler>
 			<Add option="-Wall" />
 			<Add directory="include" />
-			<Add directory="C:/Users/Gideon/Documents/csci191-3/Common/include" />
+			<Add directory="../Common/include" />
 		</Compiler>
 		<Linker>
 			<Add library="../Common/lib/libSOIL.a" />
@@ -42,7 +42,7 @@
 			<Add library="glu32" />
 			<Add library="winmm" />
 			<Add library="gdi32" />
-			<Add directory="C:/Users/Gideon/Documents/csci191-3/Common/lib" />
+			<Add directory="../Common/lib" />
 		</Linker>
 		<Unit filename="include/GLLight.h" />
 		<Unit filename="include/GLScene.h" />
