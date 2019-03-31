@@ -42,7 +42,7 @@ void Parallax::parallaxInit(char* filename)
     bgTexture->loadTexture(filename);
 }
 
-void Parallax::scroll(string direction, float speed)
+bool Parallax::scroll(string direction, float speed)
 {
     /* Unused
     if (direction == "up") {
@@ -57,10 +57,18 @@ void Parallax::scroll(string direction, float speed)
     if (direction == "left" && xMin >= 0.0) {
         xMin = xMin - speed;
         xMax = xMax - speed;
+        return true;
     }
-    if (direction == "right" && xMax <= 1.0) {
-        xMin = xMin + speed;
-        xMax = xMax + speed;
+    else {
+        if (direction == "right" && xMax <= 1.0) {
+            xMin = xMin + speed;
+            xMax = xMax + speed;
+            return true;
+        }
+        else {
+            return false;
+        }
     }
+
 }
 

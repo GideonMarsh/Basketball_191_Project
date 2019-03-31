@@ -79,3 +79,83 @@
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\timer.cpp
 	"Timer.h"
 
+1554062440 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\glscene.h
+	<windows.h>
+	<GL/glut.h>
+
+1554062440 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\gllight.cpp
+	"GLLight.h"
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gllight.h
+	<GLScene.h>
+
+1554066925 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<Inputs.h>
+	<Model.h>
+	<Parallax.h>
+	<Player.h>
+
+1554063138 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\inputs.h
+	<windows.h>
+	<Model.h>
+	<Parallax.h>
+	<Player.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\model.h
+	<windows.h>
+	<GL/glut.h>
+
+1554062927 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\parallax.h
+	<iostream>
+	<windows.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\player.h
+	<GL/gl.h>
+	<TextureLoader.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\textureloader.h
+	<Soil.h>
+	<GL/gl.h>
+	<iostream>
+
+1554067615 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\inputs.cpp
+	"Inputs.h"
+
+1554062440 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\model.cpp
+	"Model.h"
+	<TextureLoader.h>
+
+1554063004 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\parallax.cpp
+	"Parallax.h"
+	<TextureLoader.h>
+
+1554067157 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\player.cpp
+	"Player.h"
+	<Timer.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\timer.h
+	<time.h>
+
+1554062440 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\textureloader.cpp
+	"TextureLoader.h"
+
+1554062440 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\timer.cpp
+	"Timer.h"
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1554062440 c:\users\gideon\documents\github\basketball_191_project\common\include\soil.h
+

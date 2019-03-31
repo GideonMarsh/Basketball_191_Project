@@ -21,7 +21,7 @@ class Inputs
         void mouseEventMove(Model *, double, double);
 
         void keyEnv(Parallax *,float);                    // for parallax movement (moving the background using the keys)
-        void playerInput(Player *);
+        void playerInput(Player *, Parallax*, float);
 
         void checkKeyDown();
 

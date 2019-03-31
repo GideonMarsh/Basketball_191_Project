@@ -32,7 +32,7 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add directory="C:/Users/mnutt/Desktop/Basketball_191_Project/Common/include" />
+			<Add directory="../Common/include" />
 			<Add directory="include" />
 		</Compiler>
 		<Linker>
@@ -42,7 +42,7 @@
 			<Add library="glu32" />
 			<Add library="winmm" />
 			<Add library="gdi32" />
-			<Add directory="C:/Users/mnutt/Desktop/Basketball_191_Project/Common/lib" />
+			<Add directory="../Common/lib" />
 		</Linker>
 		<Unit filename="include/GLLight.h" />
 		<Unit filename="include/GLScene.h" />

@@ -112,6 +112,7 @@ void Inputs::mouseEventMove(Model* Mdl, double x, double y)
     }
 }
 
+// no longer used, combined with playerInput for full range of movement
 void Inputs::keyEnv(Parallax * plx, float speed)
 {
     /*
@@ -147,7 +148,7 @@ void Inputs::checkKeyDown()
     move_up = (GetKeyState(VK_UP) & 0x8000) ? true : false;
     move_down = (GetKeyState(VK_DOWN) & 0x8000) ? true : false;
 }
-void Inputs::playerInput(Player* ply)
+void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
 {
     /*
     switch(wParam) {
@@ -160,10 +161,26 @@ void Inputs::playerInput(Player* ply)
     }*/
     if (move_right) {
         ply->action = "walk_right";
+        if (ply->xPos < -0.3) {
+            ply->playerTranslate(0.025,0.0);
+        }
+        else {
+            if (! plx->scroll("right",speed)) {
+                ply->playerTranslate(0.025,0.0);
+            }
+        }
     }
     else {
         if (move_left) {
             ply->action = "walk_left";
+            if (ply->xPos > -0.3) {
+                ply->playerTranslate(-0.025,0.0);
+            }
+            else {
+                if (! plx->scroll("left",speed)) {
+                    ply->playerTranslate(-0.025,0.0);
+                }
+            }
         }
         else {
             ply->action = "stand";

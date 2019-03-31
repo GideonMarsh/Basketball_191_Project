@@ -19,7 +19,7 @@ Player::Player()
     yMax = 0.0;
 
     //Starting position for player
-    xPos = -0.2;
+    xPos = -0.3;
     yPos = -0.3;
     zPos = -1;
 
@@ -36,6 +36,7 @@ void Player::drawPlayer()
 {
     T->binder();
     glPushMatrix();
+    glTranslated(xPos,yPos,zPos);
     glBegin(GL_QUADS);
 
     glTexCoord2f(xMin,yMax);
@@ -75,16 +76,16 @@ void Player::playerInit(char *filename)
 
 void Player::playerTranslate(float xChange, float yChange)
 {
-    /*xPos += xChange;
-    if (xPos < 0.0) {
-        xPos = 0.0;
+    xPos += xChange;
+    if (xPos < -1.55) {
+        xPos = -1.55;
     }
-    if (xPos > 1.0) {
-        xPos = 1.0;
-    }*/
+    if (xPos > 1.1) {
+        xPos = 1.1;
+    }
     yPos += yChange;
-    if (yPos < -1.0) {
-        yPos = -1.0;
+    if (yPos < -0.85) {
+        yPos = -0.85;
     }
     if (yPos > 0.5) {
         yPos = 0.5;
