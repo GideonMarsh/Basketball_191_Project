@@ -51,7 +51,7 @@ GLint GLScene::initGL()
     //Mdl->modelInit("images/teapot_alt.jpg");
 
    /*-----------------------init enemy----------------------------*/
-    enmTex->loadTexture("images/enm.png");
+    enmTex->loadTexture("images/skele.png");
 
         for(int i=0;i<2;i++)
     {
@@ -59,8 +59,8 @@ GLint GLScene::initGL()
         Enm[i].enemyTex = enmTex->tex;
 
 
-       Enm[i].xPos = (float)(rand())/float(RAND_MAX)*5-2.5;
-        //Enm[i].yPos = -0.5;
+       Enm[i].xPos = (float)((rand())%10)/10;
+        Enm[i].yPos = (float)(((rand()%20)-10)/10);
 
         Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);
         Enm[i].enemyInit();

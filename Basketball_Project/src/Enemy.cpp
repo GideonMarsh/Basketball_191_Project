@@ -8,8 +8,8 @@ Enemy::Enemy()
     yPos = 0.0;
     zPos = -0.5;
 
-    xSize = 0.1;
-    ySize = 0.1;
+    xSize = 0.05;
+    ySize = 0.05;
 
     /*frames = 4.0;
 
@@ -39,14 +39,14 @@ Enemy::~Enemy()
 void Enemy::enemyInit()
 {
 
-    frames = 4.0;
+    frames = 10.0;
 
     xMin = 0.0;
     yMin = 0.0;
     xMax = 1.0/(float)frames;
-    yMax = 0.25;
+    yMax = 0.2;
 
-    yPos=-0.12;
+    //yPos=-0.12;
 }
 
 
@@ -99,8 +99,8 @@ void Enemy::actions()
                 xMin +=1.0/(float)frames;
                 xMax +=1.0/(float)frames;
 
-                yMin = 0.25;
-                yMax = 0.5;
+                yMin = 0.2;
+                yMax = 0.4;
                     if(xMax>=1){
                         xMin=0.0;
                         xMax=1.0/(float)frames;
@@ -117,8 +117,8 @@ void Enemy::actions()
                 xMin +=1.0/(float)frames;
                 xMax +=1.0/(float)frames;
 
-                yMin = 0.5;
-                yMax = 0.75;
+                yMin = 0.4;
+                yMax = 0.6;
                     if(xMax>=1){
                         xMin=0.0;
                         xMax=1.0/(float)frames;

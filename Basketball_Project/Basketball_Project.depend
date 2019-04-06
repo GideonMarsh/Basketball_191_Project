@@ -23,13 +23,14 @@
 1552946262 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1554576304 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
+1554580743 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
 	<Model.h>
 	<Parallax.h>
 	<Player.h>
+	<Enemy.h>
 
 1554335604 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
@@ -257,7 +258,7 @@
 1554576304 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
-1554577660 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
+1554580743 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 
 1554577660 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\enemy.h
