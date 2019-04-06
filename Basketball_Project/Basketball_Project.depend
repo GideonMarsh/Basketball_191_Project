@@ -163,14 +163,14 @@
 
 1554580313 c:\users\gideon\documents\github\basketball_191_project\common\include\soil.h
 
-1554575118 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\main.cpp
+1554588172 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1554575822 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\glscene.h
+1554587585 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\glscene.h
 	<windows.h>
 	<GL/glut.h>
 	<Slides.h>
@@ -184,16 +184,17 @@
 1554575118 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\gllight.cpp
 	"GLLight.h"
 
-1554575118 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\gllight.h
+1554586966 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1554575118 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\glscene.cpp
+1554587793 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
 	<Model.h>
 	<Parallax.h>
 	<Player.h>
+	<Enemy.h>
 
 1554575118 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
@@ -248,7 +249,7 @@
 	<GL/gl.h>
 	<TextureLoader.h>
 
-1554572589 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\slides.cpp
+1554585545 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
 1554576303 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\slides.h
@@ -279,5 +280,13 @@
 	"Slides.h"
 
 1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\enemy.cpp
+	"Enemy.h"
+
+1554577988 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\enemy.h
+	<Timer.h>
+	<TextureLoader.h>
+	<GL/gl.h>
+
+1554584397 source:c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 

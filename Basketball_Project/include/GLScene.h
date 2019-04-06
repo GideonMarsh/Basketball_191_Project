@@ -17,7 +17,9 @@ class GLScene
         int winMsg(HWND, UINT, WPARAM, LPARAM);
 
         float screenWidth, screenHeight;
-        Slides *newPage = new Slides();
+        Slides *landingPage = new Slides();
+        Slides *menuPage = new Slides();
+        Slides *helpPage = new Slides();
 
         bool flag0,flag1,flag2, flag3;
 

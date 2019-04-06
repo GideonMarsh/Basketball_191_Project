@@ -16,6 +16,7 @@ making new project
 #pragma comment(lib, "opengl32.lib")  // search for these when searching search directories
 #pragma comment(lib, "glu32.lib")
 
+
 #include <GLScene.h>
 #include <stdlib.h>
 #include <iostream>
@@ -391,13 +392,43 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 				}
 			}
 
-			if(keys[77]){   //If the m key was hit then go to game scene. 77 is hex for m
+			//13 is hex for enter
+			if(keys[13]){                          //If the enter key was pressed then go to menu scene.
 
                Scene->flag0 =false;
-               Scene->flag1=false;
-               Scene->flag2=true;
+               Scene->flag1=true;
+               Scene->flag2=false;
+               Scene->flag3 = false;
            }
+
+                //If user pressed N in menu scene, then go to game
+               if(keys[78])
+               {
+                    Scene->flag0 =false;
+                    Scene->flag1=false;
+                    Scene->flag2=true;
+                    Scene->flag3=false;
+
+               }
+
+            //User pressed H for help
+            if(keys[72])
+               {
+                    Scene->flag0 =false;
+                    Scene->flag1=false;
+                    Scene->flag2=false;
+                    Scene->flag3=true;
+
+               }
+
+
+
+
+
 		}
+
+
+
 	}
 
 	// Shutdown

@@ -44,21 +44,25 @@
 			<Add library="gdi32" />
 			<Add directory="../Common/lib" />
 		</Linker>
+		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/GLLight.h" />
 		<Unit filename="include/GLScene.h" />
 		<Unit filename="include/Inputs.h" />
 		<Unit filename="include/Model.h" />
 		<Unit filename="include/Parallax.h" />
 		<Unit filename="include/Player.h" />
+		<Unit filename="include/Slides.h" />
 		<Unit filename="include/TextureLoader.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/GLLight.cpp" />
 		<Unit filename="src/GLScene.cpp" />
 		<Unit filename="src/Inputs.cpp" />
 		<Unit filename="src/Model.cpp" />
 		<Unit filename="src/Parallax.cpp" />
 		<Unit filename="src/Player.cpp" />
+		<Unit filename="src/Slides.cpp" />
 		<Unit filename="src/TextureLoader.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Extensions>

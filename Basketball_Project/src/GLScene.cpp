@@ -12,7 +12,6 @@ Parallax *Plx = new Parallax();
 Player *Ply = new Player();
 
 Enemy Enm[20];
-
 TextureLoader * enmTex = new TextureLoader();
 
 
@@ -68,27 +67,19 @@ GLint GLScene::initGL()
     }
 /*--------------------------------end enemy init------------------*/
 
+
     // do load all the menus
 
-    if(flag0)
-        {
-                newPage->slideInit("images/LandingPage.png");  //Landing page
-        }
-
-    else if(flag1)
-        {
-            newPage->slideInit("images/MenuPage.png"); //Menu
-        }
+    //Initializing all menus
+    landingPage->slideInit("images/LandingPage.png");  //Landing page
+    menuPage->slideInit("images/MenuPage.png"); //Menu
+    helpPage->slideInit("images/HelpPage.png"); //Help
 
 
 
-    else if(flag3)
-    {
-        newPage->slideInit("images/HelpPage.png"); //Help
-    }
 
 
-
+    //Initializing game scene
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/player.png");
 
@@ -109,41 +100,40 @@ GLint GLScene::drawGLScene()
   if(flag0) //If the flag of landing page is true, draw the landing scene
   {
     glPushMatrix();
-    newPage->drawSlide(screenWidth, screenHeight );
+    landingPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
 
-
   }
 
-  else if(flag1) //If menu flag is true, draw menu scene
+  if(flag1)
   {
-    newPage->drawSlide(screenWidth, screenHeight);
-    flag0 = false;
-    flag2 = false;         //Deactivates other flags
-    flag3 = false;
+    glPushMatrix();
+    menuPage->drawSlide(screenWidth, screenHeight );
+    glPopMatrix();
   }
+
 
   //  do something
 
-   else if(flag2){   //If game flag is true, draw game scene
-    glPushMatrix();
-    Plx->drawSquare(screenWidth,screenHeight);
-    glPopMatrix();
+    if(flag2)
+    {  //If game flag is true, draw game scene
+        glPushMatrix();
+        Plx->drawSquare(screenWidth,screenHeight);
+        glPopMatrix();
 
-    Ply->drawPlayer();
-    KbMs->checkKeyDown();
-    KbMs->playerInput(Ply,Plx,0.004);
-    Ply->playerActions();
+        Ply->drawPlayer();
+        KbMs->checkKeyDown();
+        KbMs->playerInput(Ply,Plx,0.004);
+        Ply->playerActions();
 
- /* -----------------------------------Enemy Drawing---------------------*/
-    glPushMatrix();
-    //objTex->binder();
-    for(int i=0;i<2;i++){
+        /* ---------------------Enemy Drawing---------------------*/
+        glPushMatrix();
+        //objTex->binder();
+        for(int i=0;i<2;i++){
 
         Enm[i].drawEnemy();
         //Enm[i].action=0;
         //Enm[i].actions();
-
 
 /*
         if(Enm[i].xPos<-0.5){
@@ -156,17 +146,20 @@ GLint GLScene::drawGLScene()
         }
 
         Enm[i].xPos+=Enm[i].xMove;
-
 */
+        }
+
+        glPopMatrix();
+
     }
-    glPopMatrix();
 
+    if(flag3)
+    {
+        glPushMatrix();
+        helpPage->drawSlide(screenWidth, screenHeight );
+        glPopMatrix();
+    }
     /*-----------------------------------------End of Enemy drawing-----------*/
-
-   }
-
-
-
 
     //KbMs->keyEnv(Plx,0.004);
 }
@@ -186,6 +179,8 @@ GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)
     glLoadIdentity();
 }
 
+
+//Handling the Game inputs
 int GLScene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 {
     switch (uMsg)									// Check For Windows Messages
