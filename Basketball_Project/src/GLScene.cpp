@@ -10,12 +10,18 @@ Model *Mdl = new Model();
 Parallax *Plx = new Parallax();
 Player *Ply = new Player();
 
+
 GLScene::GLScene()
 {
     //ctor
 
     screenWidth = GetSystemMetrics(SM_CXSCREEN);
     screenHeight = GetSystemMetrics(SM_CYSCREEN);
+
+    flag0= true; //Landing page
+    flag1 = false; //Menu page
+    flag2 = false; //Game
+    flag3 = false; //Help page
 }
 
 GLScene::~GLScene()
@@ -28,7 +34,7 @@ GLScene::~GLScene()
 GLint GLScene::initGL()
 {
     glShadeModel(GL_SMOOTH);                // for smooth animation transitions
-    glClearColor(1.0f,0.6f,0.7f,0.0f);      // background color (r,g,b,a) - f sets value as float (class example uses 1,0,0)
+    glClearColor(1.0f,1.6f,0.7f,0.0f);      // background color (r,g,b,a) - f sets value as float (class example uses 1,0,0)
     glClearDepth(1.0f);                     // decide what is at front and behind (depth)
     glEnable(GL_DEPTH_TEST);                // enable depth test flag for depth calculations
 
@@ -38,6 +44,28 @@ GLint GLScene::initGL()
 
     //Mdl->modelInit("images/teapot.png");
     //Mdl->modelInit("images/teapot_alt.jpg");
+
+
+    // do load all the menus
+
+    if(flag0)
+        {
+                newPage->slideInit("images/LandingPage.png");  //Landing page
+        }
+
+    else if(flag1)
+        {
+            newPage->slideInit("images/MenuPage.png"); //Menu
+        }
+
+
+
+    else if(flag3)
+    {
+        newPage->slideInit("images/HelpPage.png"); //Help
+    }
+
+
 
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/player.png");
@@ -56,16 +84,37 @@ GLint GLScene::drawGLScene()
     glPopMatrix();
     */
 
+  if(flag0) //If the flag of landing page is true, draw the landing scene
+  {
+    glPushMatrix();
+    newPage->drawSlide(screenWidth, screenHeight );
+    glPopMatrix();
+
+
+  }
+
+  else if(flag1) //If menu flag is true, draw menu scene
+  {
+    newPage->drawSlide(screenWidth, screenHeight);
+    flag0 = false;
+    flag2 = false;         //Deactivates other flags
+    flag3 = false;
+  }
+
+  //  do something
+
+   else if(flag2){   //If game flag is true, draw game scene
     glPushMatrix();
     Plx->drawSquare(screenWidth,screenHeight);
     glPopMatrix();
 
     Ply->drawPlayer();
-
     KbMs->checkKeyDown();
-
     KbMs->playerInput(Ply,Plx,0.004);
     Ply->playerActions();
+
+
+   }
 
     //KbMs->keyEnv(Plx,0.004);
 }

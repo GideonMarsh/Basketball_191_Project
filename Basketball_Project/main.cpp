@@ -390,6 +390,13 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 					return 0;						// Quit If Window Was Not Created
 				}
 			}
+
+			if(keys[77]){   //If the m key was hit then go to game scene. 77 is hex for m
+
+               Scene->flag0 =false;
+               Scene->flag1=false;
+               Scene->flag2=true;
+           }
 		}
 	}
 

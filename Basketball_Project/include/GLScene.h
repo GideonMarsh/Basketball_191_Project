@@ -3,6 +3,7 @@
 
 #include<windows.h>             // include windows header
 #include<GL/glut.h>             // include glut header
+#include <Slides.h>
 
 class GLScene
 {
@@ -16,6 +17,9 @@ class GLScene
         int winMsg(HWND, UINT, WPARAM, LPARAM);
 
         float screenWidth, screenHeight;
+        Slides *newPage = new Slides();
+
+        bool flag0,flag1,flag2, flag3;
 
     protected:
 
