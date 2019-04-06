@@ -114,13 +114,15 @@
 	<windows.h>
 	<GL/glut.h>
 
-1554062927 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\parallax.h
+1554068172 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\parallax.h
 	<iostream>
 	<windows.h>
+	<TextureLoader.h>
 
-1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\player.h
+1554068100 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\player.h
 	<GL/gl.h>
 	<TextureLoader.h>
+	<Timer.h>
 
 1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\textureloader.h
 	<Soil.h>
@@ -138,9 +140,8 @@
 	"Parallax.h"
 	<TextureLoader.h>
 
-1554067157 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\player.cpp
+1554068100 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
-	<Timer.h>
 
 1554062440 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\timer.h
 	<time.h>

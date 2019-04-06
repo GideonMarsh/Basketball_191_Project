@@ -3,6 +3,7 @@
 
 #include<GL/gl.h>
 #include<TextureLoader.h>
+#include<Timer.h>
 
 typedef struct {
     float x;
@@ -27,6 +28,9 @@ class Player
 
         int actionCounter;
         string action;
+
+        Timer *Time = new Timer();
+        TextureLoader *T = new TextureLoader();
 
     protected:
 

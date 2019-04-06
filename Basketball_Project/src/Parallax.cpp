@@ -1,7 +1,4 @@
 #include "Parallax.h"
-#include<TextureLoader.h>
-
-TextureLoader *bgTexture = new TextureLoader();
 
 Parallax::Parallax()
 {

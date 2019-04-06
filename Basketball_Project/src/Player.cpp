@@ -1,9 +1,4 @@
 #include "Player.h"
-#include<Timer.h>
-
-Timer *Time = new Timer();
-
-TextureLoader *T = new TextureLoader();
 
 Player::Player()
 {

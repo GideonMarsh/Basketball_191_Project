@@ -3,6 +3,7 @@
 
 #include<iostream>
 #include<windows.h>
+#include<TextureLoader.h>
 
 using namespace std;
 
@@ -17,6 +18,8 @@ class Parallax
         bool scroll(string, float);           // for scrolling the background to give illusion of movement
 
         float xMax, xMin, yMax, yMin;               // for mapping the background to the correct size/shape
+
+        TextureLoader *bgTexture = new TextureLoader();
 
     protected:
 
