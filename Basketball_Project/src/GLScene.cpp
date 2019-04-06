@@ -50,17 +50,12 @@ GLint GLScene::initGL()
     //Mdl->modelInit("images/teapot.png");
     //Mdl->modelInit("images/teapot_alt.jpg");
 
+   /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm.png");
 
         for(int i=0;i<2;i++)
     {
-        //Obj[i].xSize = Obj[i].ySize= (rand()%7)/10.0;
-        //Obj[i].placeObjects(((rand()%20)-10)/10.0,((rand()%20)-10)/10.0,-0.5);
 
-        //Obj[i].objectsInit();
-
-
-       //Enm[i].ySize = Enm[i].xSize = (float)(rand()%12)/50.0;
         Enm[i].enemyTex = enmTex->tex;
 
 
@@ -70,11 +65,8 @@ GLint GLScene::initGL()
         Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);
         Enm[i].enemyInit();
 
-
-
-
     }
-
+/*--------------------------------end enemy init------------------*/
 
     // do load all the menus
 
@@ -143,18 +135,15 @@ GLint GLScene::drawGLScene()
     KbMs->playerInput(Ply,Plx,0.004);
     Ply->playerActions();
 
-
-   }
-
-
-   glPushMatrix();
+ /* -----------------------------------Enemy Drawing---------------------*/
+    glPushMatrix();
     //objTex->binder();
     for(int i=0;i<2;i++){
 
         Enm[i].drawEnemy();
         //Enm[i].action=0;
         //Enm[i].actions();
-        //Obj[i].drawObjects();
+
 
 /*
         if(Enm[i].xPos<-0.5){
@@ -170,9 +159,14 @@ GLint GLScene::drawGLScene()
 
 */
     }
-
-
     glPopMatrix();
+
+    /*-----------------------------------------End of Enemy drawing-----------*/
+
+   }
+
+
+
 
     //KbMs->keyEnv(Plx,0.004);
 }
