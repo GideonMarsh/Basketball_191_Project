@@ -81,7 +81,7 @@ GLint GLScene::initGL()
 
     //Initializing game scene
     Plx->parallaxInit("images/Court_Temp.png");
-    Ply->playerInit("images/player.png");
+    Ply->playerInit("images/dribble.png");
 
     return true;
 }

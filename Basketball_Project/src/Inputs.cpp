@@ -187,10 +187,16 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
         }
     }
     if (move_up) {
+        if (!move_right && !move_left) {
+            ply->action = "walk_right";
+        }
         ply->playerTranslate(0.0, 0.025);
     }
     else {
         if (move_down) {
+            if (!move_right && !move_left) {
+                ply->action = "walk_right";
+            }
             ply->playerTranslate(0.0, -0.025);
         }
     }

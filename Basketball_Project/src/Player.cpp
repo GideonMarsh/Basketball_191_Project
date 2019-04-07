@@ -3,6 +3,8 @@
 Player::Player()
 {
     //ctor
+    animateFrames = 7.0;
+
     vertices[0].x = 0.0; vertices[0].y = 0.0; vertices[0].z = -1.0;
     vertices[1].x = 0.5; vertices[1].y = 0.0; vertices[1].z = -1.0;
     vertices[2].x = 0.5; vertices[2].y = 0.5; vertices[2].z = -1.0;
@@ -61,10 +63,10 @@ void Player::playerInit(char *filename)
     // Determines the sprite that is used from the spritesheet
     // swapping the values of min/max reverses the image
     xMin = 0.0;
-    xMax = 0.1;
+    xMax = 1.0/animateFrames;
 
-    yMin = 0.035;
-    yMax = 0.11;
+    yMin = 0.02;
+    yMax = 0.45;
 
     Time->start();
 }
@@ -90,51 +92,43 @@ void Player::playerTranslate(float xChange, float yChange)
 void Player::playerActions()
 {
 
-    if (action == "walk_right") {
-        if (Time->getTicks() > 120) {
-            actionCounter += 1;
-            Time->reset();
+    if (action == "walk_right" && Time->getTicks() > 80) {
+        if (actionCounter != 0) {
+            xMin = -1.0/animateFrames;
+            xMax = 0.0;
+            actionCounter = 0;
         }
-        switch (actionCounter % 4) {
-        case 0:
-            xMin = 0.3;
-            xMax = 0.4;
-            break;
-        case 1:
-        case 3:
-            xMin = 0.4;
-            xMax = 0.5;
-            break;
-        case 2:
-            xMin = 0.5;
-            xMax = 0.6;
-            break;
-        }
+        xMin += 1.0/animateFrames;
+        xMax += 1.0/animateFrames;
+
+        yMin = 0.02;
+        yMax = 0.45;
+
+        Time->reset();
     }
-    if (action == "walk_left") {
-        if (Time->getTicks() > 120) {
-            actionCounter += 1;
-            Time->reset();
+    if (action == "walk_left" && Time->getTicks() > 80) {
+        if (actionCounter != 1) {
+            xMin = 0.0;
+            xMax = -1.0/animateFrames;
+            actionCounter = 1;
         }
-        switch (actionCounter % 4) {
-        case 0:
-            xMin = 0.4;
-            xMax = 0.3;
-            break;
-        case 1:
-        case 3:
-            xMin = 0.5;
-            xMax = 0.4;
-            break;
-        case 2:
-            xMin = 0.6;
-            xMax = 0.5;
-            break;
-        }
+        xMin += 1.0/animateFrames;
+        xMax += 1.0/animateFrames;
+
+        yMin = 0.02;
+        yMax = 0.45;
+
+        Time->reset();
     }
     if (action == "stand") {
-        xMin = 0.0;
-        xMax = 0.1;
+        if (actionCounter != 2) {
+            actionCounter = 2;
+        }
+        xMin = 1.0/animateFrames;
+        xMax = 2.0/animateFrames;
+
+        yMin = 0.5;
+        yMax = 1.0;
     }
 }
 

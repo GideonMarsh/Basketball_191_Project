@@ -81,14 +81,14 @@
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\timer.cpp
 	"Timer.h"
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\main.cpp
+1554663294 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1554580313 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\glscene.h
+1554663294 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\glscene.h
 	<windows.h>
 	<GL/glut.h>
 	<Slides.h>
@@ -96,10 +96,10 @@
 1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\gllight.cpp
 	"GLLight.h"
 
-1554580313 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gllight.h
+1554663294 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\glscene.cpp
+1554663456 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -123,7 +123,7 @@
 	<windows.h>
 	<TextureLoader.h>
 
-1554580313 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\player.h
+1554663531 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\player.h
 	<GL/gl.h>
 	<TextureLoader.h>
 	<Timer.h>
@@ -133,7 +133,7 @@
 	<GL/gl.h>
 	<iostream>
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\inputs.cpp
+1554664228 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
 
 1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\model.cpp
@@ -143,7 +143,7 @@
 1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\parallax.cpp
 	"Parallax.h"
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\player.cpp
+1554664097 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
 1554580313 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\timer.h
@@ -276,10 +276,10 @@
 	<TextureLoader.h>
 	<GL/gl.h>
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\slides.cpp
+1554663294 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
-1554580313 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\enemy.cpp
+1554581387 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 
 1554577988 c:\users\kamar\onedrive\desktop\testproject\basketball_191_project\basketball_project\include\enemy.h
