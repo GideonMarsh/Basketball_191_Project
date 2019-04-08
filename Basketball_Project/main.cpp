@@ -386,7 +386,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 				KillGLWindow();						// Kill Our Current Window
 				fullscreen=!fullscreen;				// Toggle Fullscreen / Windowed Mode
 				// Recreate Our OpenGL Window
-				if (!CreateGLWindow("Game Engine Lesson 01",fullscreenWidth,fullscreenHeight,256,fullscreen))
+				if (!CreateGLWindow("Hoop Rush",fullscreenWidth,fullscreenHeight,256,fullscreen))
 				{
 					return 0;						// Quit If Window Was Not Created
 				}
@@ -463,7 +463,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag3=true;
 
                }
-            if(keys[32] && Scene->flag2 == true) {
+            if(keys[VK_SPACE] && Scene->flag2 == true) {
                     Scene->flag0 =false;
                     Scene->flag1=false;
                     Scene->flag2=false;
