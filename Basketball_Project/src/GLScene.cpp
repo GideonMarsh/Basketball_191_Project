@@ -5,6 +5,7 @@
 #include<Parallax.h>
 #include<Player.h>
 #include <Enemy.h>
+#include <ShootScene.h>
 
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
@@ -27,6 +28,7 @@ GLScene::GLScene()
     flag2 = false; //Game
     flag3 = false; //Help page
     flag4 = false; //Confirm to quit scene
+    flagShoot = false; //Shoot screen
 }
 
 GLScene::~GLScene()
@@ -84,6 +86,9 @@ GLint GLScene::initGL()
     //Initializing game scene
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/dribble.png");
+
+    //Initializing Shoot Scene
+    shooterView->sceneInit("images/placeholder.png");
 
     return true;
 }
@@ -174,6 +179,12 @@ GLint GLScene::drawGLScene()
     }
 
     //KbMs->keyEnv(Plx,0.004);
+
+    if(flagShoot) {
+        glPushMatrix();
+        shooterView->drawSlide(screenWidth, screenHeight);
+        glPopMatrix();
+    }
 }
 
 GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)

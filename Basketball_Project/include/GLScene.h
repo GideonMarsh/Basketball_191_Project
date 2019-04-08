@@ -4,6 +4,7 @@
 #include<windows.h>             // include windows header
 #include<GL/glut.h>             // include glut header
 #include <Slides.h>
+#include <ShootScene.h>
 
 class GLScene
 {
@@ -21,8 +22,9 @@ class GLScene
         Slides *menuPage = new Slides();
         Slides *helpPage = new Slides();
         Slides *popUp = new Slides();
+        ShootScene *shooterView = new ShootScene();
 
-        bool flag0,flag1,flag2, flag3, flag4;
+        bool flag0,flag1,flag2, flag3, flag4, flagShoot;
 
     protected:
 

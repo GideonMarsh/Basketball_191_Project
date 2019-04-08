@@ -410,6 +410,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag2=true;
                     Scene->flag3=false;
                     Scene->flag4 = false;
+                    Scene->flagShoot=false;
 
                }
 
@@ -431,6 +432,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag2=false;
                     Scene->flag3=false;
                     Scene->flag4 = false;
+                    Scene->flagShoot=false;
                }
 
                //If the user confirms to resume game, go back to game
@@ -449,6 +451,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag1=true;
                     Scene->flag2=false;
                     Scene->flag3=false;
+                    Scene->flagShoot=false;
                }
 
             //User pressed H for help
@@ -460,6 +463,13 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag3=true;
 
                }
+            if(keys[32] && Scene->flag2 == true) {
+                    Scene->flag0 =false;
+                    Scene->flag1=false;
+                    Scene->flag2=false;
+                    Scene->flag3=false;
+                    Scene->flagShoot=true;
+            }
 
             //User pressed R, resume game
             if(Scene->flag3 == true && keys[82])
@@ -468,6 +478,15 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                 Scene->flag1=false;
                 Scene->flag2=true;
                 Scene->flag3=false;
+                Scene->flagShoot=false;
+            }
+            if(Scene->flagShoot == true && keys[82])
+            {
+                Scene->flag0 =false;
+                Scene->flag1=false;
+                Scene->flag2=true;
+                Scene->flag3=false;
+                Scene->flagShoot=false;
             }
 
 
