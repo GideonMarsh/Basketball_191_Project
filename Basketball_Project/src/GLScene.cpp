@@ -53,7 +53,7 @@ GLint GLScene::initGL()
     //Mdl->modelInit("images/teapot_alt.jpg");
 
    /*-----------------------init enemy----------------------------*/
-    enmTex->loadTexture("images/skele.png");
+    enmTex->loadTexture("images/enm12.png");
 
         for(int i=0;i<2;i++)
     {

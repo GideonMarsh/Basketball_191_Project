@@ -39,12 +39,13 @@ Enemy::~Enemy()
 void Enemy::enemyInit()
 {
 
-    frames = 10.0;
+    frames = 1.0;
 
     xMin = 0.0;
     yMin = 0.0;
-    xMax = 1.0/(float)frames;
-    yMax = 0.2;
+    //xMax = 1.0/(float)frames;
+    xMax = 1.0;
+    yMax = 1;
 
     //yPos=-0.12;
 }
@@ -99,11 +100,12 @@ void Enemy::actions()
                 xMin +=1.0/(float)frames;
                 xMax +=1.0/(float)frames;
 
-                yMin = 0.2;
-                yMax = 0.4;
+                yMin = 0.0;
+                yMax = 1.0;
                     if(xMax>=1){
-                        xMin=0.0;
-                        xMax=1.0/(float)frames;
+                        xMin=1.0;
+                        //xMax=1.0/(float)frames;
+                        xMax = 0.0;
                         T3->reset();
                     }
                 T3->reset();
