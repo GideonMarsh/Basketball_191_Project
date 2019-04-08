@@ -20,8 +20,9 @@ class GLScene
         Slides *landingPage = new Slides();
         Slides *menuPage = new Slides();
         Slides *helpPage = new Slides();
+        Slides *popUp = new Slides();
 
-        bool flag0,flag1,flag2, flag3;
+        bool flag0,flag1,flag2, flag3, flag4;
 
     protected:
 

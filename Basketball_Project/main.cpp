@@ -399,6 +399,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                Scene->flag1=true;
                Scene->flag2=false;
                Scene->flag3 = false;
+               Scene->flag4 = false;
            }
 
                 //If user pressed N in menu scene, then go to game
@@ -408,6 +409,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flag1=false;
                     Scene->flag2=true;
                     Scene->flag3=false;
+                    Scene->flag4 = false;
 
                }
 
@@ -415,9 +417,30 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                if(Scene->flag2 == true && keys[81])
                {
                     Scene->flag0 =false;
+                    Scene->flag1=false;
+                    Scene->flag2=false;
+                    Scene->flag3=false;
+                    Scene->flag4 = true;
+               }
+
+               //If the user confirms to quit, go back to menu
+               if(Scene->flag4 == true && keys[13])
+               {
+                   Scene->flag0 =false;
                     Scene->flag1=true;
                     Scene->flag2=false;
                     Scene->flag3=false;
+                    Scene->flag4 = false;
+               }
+
+               //If the user confirms to resume game, go back to game
+               if(Scene->flag4 == true && keys[8])
+               {
+                   Scene->flag0 =false;
+                    Scene->flag1=false;
+                    Scene->flag2=true;
+                    Scene->flag3=false;
+                    Scene->flag4 = false;
                }
                 //If help scene is active and user presses Q, go back to menu
                if(Scene->flag3 == true && keys[81])

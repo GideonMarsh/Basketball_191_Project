@@ -26,6 +26,7 @@ GLScene::GLScene()
     flag1 = false; //Menu page
     flag2 = false; //Game
     flag3 = false; //Help page
+    flag4 = false; //Confirm to quit scene
 }
 
 GLScene::~GLScene()
@@ -74,6 +75,7 @@ GLint GLScene::initGL()
     landingPage->slideInit("images/LandingPage.png");  //Landing page
     menuPage->slideInit("images/MenuPage.png"); //Menu
     helpPage->slideInit("images/HelpPage.png"); //Help
+    popUp->slideInit("images/PopUp.png");
 
 
 
@@ -153,13 +155,23 @@ GLint GLScene::drawGLScene()
 
     }
 
+    /*-----------------------------------------End of Enemy drawing-----------*/
+
     if(flag3)
     {
         glPushMatrix();
         helpPage->drawSlide(screenWidth, screenHeight );
         glPopMatrix();
     }
-    /*-----------------------------------------End of Enemy drawing-----------*/
+
+
+    if(flag4)
+    {
+        glPushMatrix();
+        //glTranslated(0.0,0.0,-5.0); //Created another window
+        popUp->drawSlide(screenWidth, screenHeight );
+        glPopMatrix();
+    }
 
     //KbMs->keyEnv(Plx,0.004);
 }
