@@ -130,5 +130,13 @@ void Player::playerActions()
         yMin = 0.5;
         yMax = 1.0;
     }
+    if (action == "shoot") {
+   //    Need to figure out proper frames for shooting animation
+        xMin = 1.0/animateFrames;
+        xMax = 2.0/animateFrames;
+
+        yMin = -0.8;
+        yMax = -0.0;
+    }
 }
 

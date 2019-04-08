@@ -14,6 +14,7 @@ Inputs::Inputs()
     move_right = false;
     move_up = false;
     move_down = false;
+    shoot = false;
 }
 
 Inputs::~Inputs()
@@ -199,5 +200,8 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
             }
             ply->playerTranslate(0.0, -0.025);
         }
+    }
+    if (shoot) {
+        ply->action = "shoot";
     }
 }

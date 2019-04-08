@@ -182,7 +182,12 @@ GLint GLScene::drawGLScene()
 
     if(flagShoot) {
         glPushMatrix();
+        Ply->drawPlayer();
+        KbMs->checkKeyDown();
+
+        Ply->playerActions();
         shooterView->drawSlide(screenWidth, screenHeight);
+
         glPopMatrix();
     }
 }
