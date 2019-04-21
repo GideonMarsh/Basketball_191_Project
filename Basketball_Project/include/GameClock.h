@@ -6,12 +6,6 @@
 #include<time.h>
 #include<Timer.h>
 
-typedef struct {
-    float x;
-    float y;
-    float z;
-}vec;
-
 class GameClock
 {
     public:
@@ -24,7 +18,6 @@ class GameClock
         void drawClock();
         void activateClock(bool);
 
-        vec vertices[4];
         float xMin, yMin, xMax, yMax;
         float xPos, yPos, zPos;
 
@@ -36,7 +29,7 @@ class GameClock
         bool runTime;
         bool isActive;
 
-        TextureLoader *T;
+        TextureLoader *Tex;
         Timer *Time;
 
 

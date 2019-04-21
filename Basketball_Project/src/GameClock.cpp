@@ -3,10 +3,6 @@
 GameClock::GameClock()
 {
     //ctor
-    vertices[0].x = 0.0; vertices[0].y = 0.0; vertices[0].z = -1.0;
-    vertices[1].x = 1.0; vertices[1].y = 0.0; vertices[1].z = -1.0;
-    vertices[2].x = 1.0; vertices[2].y = 1.0; vertices[2].z = -1.0;
-    vertices[3].x = 0.0; vertices[3].y = 1.0; vertices[3].z = -1.0;
 
     xMin = 0.0;
     yMin = 0.0;
@@ -32,8 +28,8 @@ GameClock::~GameClock()
 
 void GameClock::clockInit(char* filename)
 {
-    T->loadTexture(filename);
-    isActive = false;
+    Tex->loadTexture(filename);
+    isActive = true;
 }
 
 void GameClock::startClock(int mins, int secs, int msecs)
@@ -50,7 +46,28 @@ void GameClock::timeAction()
 
 void GameClock::drawClock()
 {
+    Tex->binder();
+    if (isActive){
+        glPushMatrix();
+        glTranslated(xPos,yPos,zPos);
+        glBegin(GL_QUADS);
 
+        glTexCoord2f(xMin,yMax);
+        glVertex3f(0.0,0.0,-1.0);
+
+        glTexCoord2f(xMax,yMax);
+        glVertex3f(1.0,0.0,-1.0);
+
+        glTexCoord2f(xMax,yMin);
+        glVertex3f(1.0,1.0,-1.0);
+
+        glTexCoord2f(xMin,yMin);
+        glVertex3f(0.0,1.0,-1.0);
+
+        glEnd();
+
+        glPopMatrix();
+    }
 }
 
 void GameClock::activateClock(bool act)

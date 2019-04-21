@@ -49,6 +49,7 @@
 		<Unit filename="include/Enemy.h" />
 		<Unit filename="include/GLLight.h" />
 		<Unit filename="include/GLScene.h" />
+		<Unit filename="include/GameClock.h" />
 		<Unit filename="include/Inputs.h" />
 		<Unit filename="include/Model.h" />
 		<Unit filename="include/Parallax.h" />
@@ -61,6 +62,7 @@
 		<Unit filename="src/Enemy.cpp" />
 		<Unit filename="src/GLLight.cpp" />
 		<Unit filename="src/GLScene.cpp" />
+		<Unit filename="src/GameClock.cpp" />
 		<Unit filename="src/Inputs.cpp" />
 		<Unit filename="src/Model.cpp" />
 		<Unit filename="src/Parallax.cpp" />

@@ -6,11 +6,13 @@
 #include<Player.h>
 #include <Enemy.h>
 #include <ShootScene.h>
+#include<GameClock.h>
 
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
 Parallax *Plx = new Parallax();
 Player *Ply = new Player();
+GameClock *Gc = new GameClock();
 
 Enemy Enm[20];
 TextureLoader * enmTex = new TextureLoader();
@@ -86,6 +88,7 @@ GLint GLScene::initGL()
     //Initializing game scene
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/dribble.png");
+    //Gc->clockInit("images/game_clock.jpg");
 
     //Initializing Shoot Scene
     shooterView->sceneInit("images/placeholder.png");
@@ -127,6 +130,8 @@ GLint GLScene::drawGLScene()
         glPushMatrix();
         Plx->drawSquare(screenWidth,screenHeight);
         glPopMatrix();
+
+        Gc->drawClock();
 
         Ply->drawPlayer();
         KbMs->checkKeyDown();
