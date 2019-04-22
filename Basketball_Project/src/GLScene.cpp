@@ -88,7 +88,7 @@ GLint GLScene::initGL()
     //Initializing game scene
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/dribble.png");
-    //Gc->clockInit("images/game_clock.jpg");
+    //Gc->clockInit("images/dribble.png");        NEEDS FIX! INITIALIZING CLOCK CRASHES GAME
 
     //Initializing Shoot Scene
     shooterView->sceneInit("images/placeholder.png");
@@ -131,7 +131,10 @@ GLint GLScene::drawGLScene()
         Plx->drawSquare(screenWidth,screenHeight);
         glPopMatrix();
 
-        Gc->drawClock();
+        if (Gc->timeAction()) {
+            // Code for running out of time goes here
+        }
+        //Gc->drawClock();
 
         Ply->drawPlayer();
         KbMs->checkKeyDown();

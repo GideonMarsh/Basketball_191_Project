@@ -14,7 +14,7 @@ class GameClock
 
         void clockInit(char *);
         void startClock(int,int,int);
-        void timeAction();
+        bool timeAction();
         void drawClock();
         void activateClock(bool);
 

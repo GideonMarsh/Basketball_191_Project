@@ -37,11 +37,33 @@ void GameClock::startClock(int mins, int secs, int msecs)
     minutes = mins;
     seconds = secs;
     milliseconds = msecs;
+
+    runTime = true;
+    timeOver = false;
+    Time->start();
 }
 
-void GameClock::timeAction()
+bool GameClock::timeAction()
 {
-
+    if (runTime) {
+        if (Time->getTicks() > 10) {
+            milliseconds -= 1;
+            Time->reset();
+        }
+        if (minutes == 0 && seconds == 0 && milliseconds == 0) {
+            runTime = false;
+            timeOver = true;
+        }
+        if (milliseconds == -1) {
+            seconds -= 1;
+            milliseconds = 99;
+        }
+        if (seconds == -1) {
+            minutes -= 1;
+            seconds = 59;
+        }
+    }
+    return timeOver;
 }
 
 void GameClock::drawClock()
