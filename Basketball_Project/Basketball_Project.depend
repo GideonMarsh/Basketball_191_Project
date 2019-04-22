@@ -102,7 +102,7 @@
 1554768120 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1555954239 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\glscene.cpp
+1555972666 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -309,18 +309,19 @@
 1554768120 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\shootscene.cpp
 	"ShootScene.h"
 
-1555954003 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\gameclock.cpp
+1555973320 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\gameclock.cpp
 	"GameClock.h"
 
-1555953797 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gameclock.h
+1555973622 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\gameclock.h
 	<GL/gl.h>
 	<TextureLoader.h>
 	<time.h>
 	<Timer.h>
+	<ClockDigit.h>
 
-1555882990 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\clockdigit.cpp
+1555972511 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\clockdigit.cpp
 	"ClockDigit.h"
 
-1555883577 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\clockdigit.h
+1555971563 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\clockdigit.h
 	<TextureLoader.h>
 

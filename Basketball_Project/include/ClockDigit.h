@@ -17,7 +17,7 @@ class ClockDigit
         float xMin, yMin, xMax, yMax;
         float xPos, yPos, zPos;
 
-        TextureLoader *T;
+        TextureLoader T;
 
     protected:
 

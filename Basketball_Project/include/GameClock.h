@@ -5,6 +5,7 @@
 #include<TextureLoader.h>
 #include<time.h>
 #include<Timer.h>
+#include<ClockDigit.h>
 
 class GameClock
 {
@@ -21,6 +22,8 @@ class GameClock
         float xMin, yMin, xMax, yMax;
         float xPos, yPos, zPos;
 
+        ClockDigit digits[4];
+
         int minutes;
         int seconds;
         int milliseconds;
@@ -29,8 +32,8 @@ class GameClock
         bool runTime;
         bool isActive;
 
-        TextureLoader *Tex;
-        Timer *Time;
+        TextureLoader Tex;
+        Timer Time;
 
 
     protected:
