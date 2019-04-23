@@ -29,7 +29,7 @@ GameClock::~GameClock()
 void GameClock::clockInit(char* filename)
 {
     Tex.loadTexture(filename);
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 3; i++) {
         digits[i].digitInit("images/game_clock_digits.jpg");
         digits[i].xPos = -1.45 + (i * 0.16);
         if (i > 1) {
@@ -38,7 +38,6 @@ void GameClock::clockInit(char* filename)
         digits[i].yPos = 0.55;
     }
     isActive = true;
-    startClock(1,1,50);
 }
 
 void GameClock::startClock(int mins, int secs, int msecs)
@@ -55,7 +54,7 @@ void GameClock::startClock(int mins, int secs, int msecs)
 bool GameClock::timeAction()
 {
     if (runTime) {
-        if (Time.getTicks() > 1) {
+        if (Time.getTicks() > 85) {
             milliseconds -= 1;
             Time.reset();
         }
@@ -65,7 +64,7 @@ bool GameClock::timeAction()
         }
         if (milliseconds == -1) {
             seconds -= 1;
-            milliseconds = 99;
+            milliseconds = 9;
         }
         if (seconds == -1) {
             minutes -= 1;
@@ -81,15 +80,13 @@ void GameClock::drawClock()
         digits[0].value = minutes / 10;
         digits[1].value = minutes % 10;
         digits[2].value = seconds / 10;
-        digits[3].value = seconds % 10;
     }
     else {
         digits[0].value = seconds / 10;
         digits[1].value = seconds % 10;
-        digits[2].value = milliseconds / 10;
-        digits[3].value = milliseconds % 10;
+        digits[2].value = milliseconds;
     }
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 3; i++) {
         digits[i].drawDigit();
     }
 

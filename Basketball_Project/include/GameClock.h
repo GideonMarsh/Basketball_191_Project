@@ -22,7 +22,7 @@ class GameClock
         float xMin, yMin, xMax, yMax;
         float xPos, yPos, zPos;
 
-        ClockDigit digits[4];
+        ClockDigit digits[3];
 
         int minutes;
         int seconds;

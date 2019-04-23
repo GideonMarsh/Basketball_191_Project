@@ -90,6 +90,8 @@ GLint GLScene::initGL()
     Ply->playerInit("images/dribble.png");
     Gc->clockInit("images/game_clock.jpg");
 
+    Gc->startClock(0,60,0);                         // JUST FOR TESTING! Should be called at start of stage to set timer
+
     //Initializing Shoot Scene
     shooterView->sceneInit("images/placeholder.png");
 
