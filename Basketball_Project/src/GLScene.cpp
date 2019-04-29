@@ -25,11 +25,11 @@ GLScene::GLScene()
     screenWidth = GetSystemMetrics(SM_CXSCREEN);
     screenHeight = GetSystemMetrics(SM_CYSCREEN);
 
-    flag0= true; //Landing page
-    flag1 = false; //Menu page
-    flag2 = false; //Game
-    flag3 = false; //Help page
-    flag4 = false; //Confirm to quit scene
+    landingFlag= true; //Landing page
+    menuFlag = false; //Menu page
+    gameFlag = false; //Game
+    helpFlag = false; //Help page
+    exitFlag = false; //Confirm to quit scene
     flagShoot = false; //Shoot screen
 }
 
@@ -93,7 +93,7 @@ GLint GLScene::initGL()
     Gc->startClock(0,60,0);                         // JUST FOR TESTING! Should be called at start of stage to set timer
 
     //Initializing Shoot Scene
-    shooterView->sceneInit("images/placeholder.png");
+    shooterView->sceneInit("images/shoot.png");
 
     return true;
 }
@@ -109,7 +109,7 @@ GLint GLScene::drawGLScene()
     glPopMatrix();
     */
 
-  if(flag0) //If the flag of landing page is true, draw the landing scene
+  if(landingFlag) //If the flag of landing page is true, draw the landing scene
   {
     glPushMatrix();
     landingPage->drawSlide(screenWidth, screenHeight );
@@ -117,7 +117,7 @@ GLint GLScene::drawGLScene()
 
   }
 
-  if(flag1)
+  if(menuFlag)
   {
     glPushMatrix();
     menuPage->drawSlide(screenWidth, screenHeight );
@@ -125,9 +125,9 @@ GLint GLScene::drawGLScene()
   }
 
 
-  //  do something
 
-    if(flag2)
+
+    if(gameFlag)
     {  //If game flag is true, draw game scene
         glPushMatrix();
         Plx->drawSquare(screenWidth,screenHeight);
@@ -172,7 +172,7 @@ GLint GLScene::drawGLScene()
 
     /*-----------------------------------------End of Enemy drawing-----------*/
 
-    if(flag3)
+    if(helpFlag)
     {
         glPushMatrix();
         helpPage->drawSlide(screenWidth, screenHeight );
@@ -180,7 +180,7 @@ GLint GLScene::drawGLScene()
     }
 
 
-    if(flag4)
+    if(exitFlag)
     {
         glPushMatrix();
         //glTranslated(0.0,0.0,-5.0); //Created another window
@@ -191,6 +191,12 @@ GLint GLScene::drawGLScene()
     //KbMs->keyEnv(Plx,0.004);
 
     if(flagShoot) {
+           if (Gc->timeAction()) {
+            // Code for running out of time goes here
+        }
+        Gc->drawClock();
+
+
         glPushMatrix();
         Ply->drawPlayer();
         KbMs->checkKeyDown();

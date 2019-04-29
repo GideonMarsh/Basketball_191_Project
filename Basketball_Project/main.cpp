@@ -395,98 +395,120 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 			//13 is hex for enter
 			if(keys[13]){                          //If the enter key was pressed then go to menu scene.
 
-               Scene->flag0 =false;
-               Scene->flag1=true;
-               Scene->flag2=false;
-               Scene->flag3 = false;
-               Scene->flag4 = false;
+               Scene->landingFlag =false;
+               Scene->menuFlag=true;
+               Scene->gameFlag=false;
+               Scene->helpFlag = false;
+               Scene->exitFlag = false;
            }
 
                 //If user pressed N in menu scene, then go to game
                if(keys[78])
                {
-                    Scene->flag0 =false;
-                    Scene->flag1=false;
-                    Scene->flag2=true;
-                    Scene->flag3=false;
-                    Scene->flag4 = false;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=true;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
                     Scene->flagShoot=false;
 
                }
 
                //If the game scene is active and the user presses Q, go back to menu
-               if(Scene->flag2 == true && keys[81])
+               if(Scene->gameFlag == true && keys[81])
                {
-                    Scene->flag0 =false;
-                    Scene->flag1=false;
-                    Scene->flag2=false;
-                    Scene->flag3=false;
-                    Scene->flag4 = true;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = true;
+                    Scene->flagShoot=false;
                }
 
                //If the user confirms to quit, go back to menu
-               if(Scene->flag4 == true && keys[13])
+               if(Scene->exitFlag == true && keys[13])
                {
-                   Scene->flag0 =false;
-                    Scene->flag1=true;
-                    Scene->flag2=false;
-                    Scene->flag3=false;
-                    Scene->flag4 = false;
+                   Scene->landingFlag =false;
+                    Scene->menuFlag=true;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
                     Scene->flagShoot=false;
                }
 
                //If the user confirms to resume game, go back to game
-               if(Scene->flag4 == true && keys[8])
+               if(Scene->exitFlag == true && keys[8])
                {
-                   Scene->flag0 =false;
-                    Scene->flag1=false;
-                    Scene->flag2=true;
-                    Scene->flag3=false;
-                    Scene->flag4 = false;
+                   Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=true;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
                }
                 //If help scene is active and user presses Q, go back to menu
-               if(Scene->flag3 == true && keys[81])
+               if(Scene->helpFlag == true && keys[81])
                {
-                    Scene->flag0 =false;
-                    Scene->flag1=true;
-                    Scene->flag2=false;
-                    Scene->flag3=false;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=true;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
                     Scene->flagShoot=false;
                }
 
             //User pressed H for help
             if(keys[72])
                {
-                    Scene->flag0 =false;
-                    Scene->flag1=false;
-                    Scene->flag2=false;
-                    Scene->flag3=true;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=true;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
 
                }
-            if(keys[VK_SPACE] && Scene->flag2 == true) {
-                    Scene->flag0 =false;
-                    Scene->flag1=false;
-                    Scene->flag2=false;
-                    Scene->flag3=false;
+            if(keys[VK_SPACE] && Scene->gameFlag == true) {
+
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
                     Scene->flagShoot=true;
             }
 
             //User pressed R, resume game
-            if(Scene->flag3 == true && keys[82])
+            if(Scene->helpFlag == true && keys[82])
             {
-                Scene->flag0 =false;
-                Scene->flag1=false;
-                Scene->flag2=true;
-                Scene->flag3=false;
-                Scene->flagShoot=false;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=true;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
             }
+
+            //Shooting scene and user presses R, go back to game
             if(Scene->flagShoot == true && keys[82])
             {
-                Scene->flag0 =false;
-                Scene->flag1=false;
-                Scene->flag2=true;
-                Scene->flag3=false;
-                Scene->flagShoot=false;
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=true;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
+            }
+
+            //Shooting scene and user presses Q, quit game
+            if(Scene->flagShoot == true && keys[81])
+            {
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=true;
+                    Scene->helpFlag=false;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
             }
 
 

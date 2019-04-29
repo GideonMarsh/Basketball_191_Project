@@ -45,7 +45,7 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 //    glPopMatrix();
 
 
-    glScaled(4.0,4.0,1.0);
+    glScaled(5.0,4.0,1.0);
 
     glBegin(GL_POLYGON);                    // drawing in openGL
 

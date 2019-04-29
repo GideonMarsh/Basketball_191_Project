@@ -24,7 +24,7 @@ class GLScene
         Slides *popUp = new Slides();
         ShootScene *shooterView = new ShootScene();
 
-        bool flag0,flag1,flag2, flag3, flag4, flagShoot;
+        bool landingFlag,menuFlag,gameFlag, helpFlag, exitFlag, flagShoot;
 
     protected:
 

@@ -325,3 +325,126 @@
 1555971563 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\clockdigit.h
 	<TextureLoader.h>
 
+1556569756 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
+	<windows.h>
+	<GLScene.h>
+	<stdlib.h>
+	<iostream>
+	<windows.h>
+
+1556567936 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\glscene.h
+	<windows.h>
+	<GL/glut.h>
+	<Slides.h>
+	<ShootScene.h>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\gl\glut.h
+	<windows.h>
+	<stdlib.h>
+	<GL/gl.h>
+	<GL/glu.h>
+
+1554571826 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\slides.h
+	<GL/gl.h>
+	<TextureLoader.h>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\textureloader.h
+	<Soil.h>
+	<GL/gl.h>
+	<iostream>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\soil.h
+
+1554760676 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\shootscene.h
+	<GL/gl.h>
+	<TextureLoader.h>
+
+1555975190 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\clockdigit.cpp
+	"ClockDigit.h"
+
+1555975190 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\clockdigit.h
+	<TextureLoader.h>
+
+1554767011 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\enemy.cpp
+	"Enemy.h"
+
+1554577988 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\enemy.h
+	<Timer.h>
+	<TextureLoader.h>
+	<GL/gl.h>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\timer.h
+	<time.h>
+
+1556126059 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gameclock.cpp
+	"GameClock.h"
+
+1556126059 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gameclock.h
+	<GL/gl.h>
+	<TextureLoader.h>
+	<time.h>
+	<Timer.h>
+	<ClockDigit.h>
+
+1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gllight.cpp
+	"GLLight.h"
+
+1554586966 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gllight.h
+	<GLScene.h>
+
+1556569840 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\glscene.cpp
+	"GLScene.h"
+	<GLLight.h>
+	<Inputs.h>
+	<Model.h>
+	<Parallax.h>
+	<Player.h>
+	<Enemy.h>
+	<ShootScene.h>
+	<GameClock.h>
+
+1554840413 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\inputs.h
+	<windows.h>
+	<Model.h>
+	<Parallax.h>
+	<Player.h>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\model.h
+	<windows.h>
+	<GL/glut.h>
+
+1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\parallax.h
+	<iostream>
+	<windows.h>
+	<TextureLoader.h>
+
+1554691421 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\player.h
+	<GL/gl.h>
+	<TextureLoader.h>
+	<Timer.h>
+
+1554767011 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\inputs.cpp
+	"Inputs.h"
+
+1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\model.cpp
+	"Model.h"
+	<TextureLoader.h>
+
+1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\parallax.cpp
+	"Parallax.h"
+
+1554767011 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\player.cpp
+	"Player.h"
+
+1556569170 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\shootscene.cpp
+	"ShootScene.h"
+
+1554591570 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\slides.cpp
+	"Slides.h"
+
+1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\textureloader.cpp
+	"TextureLoader.h"
+
+1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\timer.cpp
+	"Timer.h"
+
