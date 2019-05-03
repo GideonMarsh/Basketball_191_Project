@@ -365,20 +365,13 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 		}
 		else										// If There Are No Messages
 		{
-			// Draw The Scene.  Watch For ESC Key And Quit Messages From DrawGLScene()
-			if (keys[VK_ESCAPE])	// Active?  Was There A Quit Received?                        // Here's a fix
-			{
-				done=TRUE;							// ESC or DrawGLScene Signalled A Quit
-			}
-			else									// Not Time To Quit, Update Screen
-			{
 			    time_now = glutGet(GLUT_ELAPSED_TIME);
 			    if ((time_now - time_prev) > (1000/FPS)){
                     Scene->drawGLScene();                                                             // Here's a fix
                     SwapBuffers(hDC);					// Swap Buffers (Double Buffering)
                     time_prev = time_now;
                 }
-			}
+
 
 			if (keys[VK_F1])						// Is F1 Being Pressed?
 			{
@@ -414,8 +407,13 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 
                }
 
+               if(Scene->menuFlag == true && keys[VK_ESCAPE])
+               {
+                   done = true;
+               }
+
                //If the game scene is active and the user presses Q, go back to menu
-               if(Scene->gameFlag == true && keys[81])
+               if(Scene->gameFlag == true && keys[VK_ESCAPE])
                {
                     Scene->landingFlag =false;
                     Scene->menuFlag=false;
@@ -478,7 +476,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flagShoot=true;
             }
 
-            //User pressed R, resume game
+            //User pressed enter, resume game
             if(Scene->helpFlag == true && keys[82])
             {
                     Scene->landingFlag =false;
@@ -510,6 +508,9 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
             }
+
+
+
 
 
 		}

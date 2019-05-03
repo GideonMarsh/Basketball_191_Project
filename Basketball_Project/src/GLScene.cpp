@@ -152,7 +152,7 @@ GLint GLScene::drawGLScene()
         //Enm[i].action=0;
         //Enm[i].actions();
 
-/*
+
         if(Enm[i].xPos<-0.5){
             Enm[i].xMove=0.01;
             Enm[i].action=0;
@@ -162,7 +162,7 @@ GLint GLScene::drawGLScene()
             Enm[i].action=1;
         }
         Enm[i].xPos+=Enm[i].xMove;
-*/
+
         }
 
         glPopMatrix();
