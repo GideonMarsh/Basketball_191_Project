@@ -8,13 +8,14 @@
 #include <ShootScene.h>
 #include<GameClock.h>
 #include <Particles.h>
-
+#include <Sounds.h>
 
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
 Parallax *Plx = new Parallax();
 Player *Ply = new Player();
 GameClock *Gc = new GameClock();
+Sounds *Snd = new Sounds();
 
 Enemy Enm[20];
 TextureLoader * enmTex = new TextureLoader();
@@ -98,6 +99,8 @@ GLint GLScene::initGL()
 
     //Initializing Shoot Scene
     shooterView->sceneInit("images/shoot.png");
+
+    if(Snd->initSounds()) return false; // return false if sounds could not be initialized
 
     return true;
 }
