@@ -174,6 +174,10 @@ GLint GLScene::drawGLScene()
 
         glPopMatrix();
 
+        for(int i = 0; i < 2; i++) {
+            Enm[i].checkCollision(Ply);
+        }
+
     }
 
     /*-----------------------------------------End of Enemy drawing-----------*/
@@ -197,7 +201,7 @@ GLint GLScene::drawGLScene()
     //KbMs->keyEnv(Plx,0.004);
 
     if(flagShoot) {
-           if (Gc->timeAction()) {
+        if (Gc->timeAction()) {
             // Code for running out of time goes here
         }
         Gc->drawClock();

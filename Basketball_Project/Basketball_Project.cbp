@@ -44,6 +44,7 @@
 			<Add library="glu32" />
 			<Add library="winmm" />
 			<Add library="gdi32" />
+			<Add library="../Common/lib/libirrKlang.a" />
 			<Add directory="../Common/lib" />
 		</Linker>
 		<Unit filename="include/ClockDigit.h" />
@@ -58,6 +59,7 @@
 		<Unit filename="include/Player.h" />
 		<Unit filename="include/ShootScene.h" />
 		<Unit filename="include/Slides.h" />
+		<Unit filename="include/Sounds.h" />
 		<Unit filename="include/TextureLoader.h" />
 		<Unit filename="include/Timer.h" />
 		<Unit filename="main.cpp" />
@@ -73,6 +75,7 @@
 		<Unit filename="src/Player.cpp" />
 		<Unit filename="src/ShootScene.cpp" />
 		<Unit filename="src/Slides.cpp" />
+		<Unit filename="src/Sounds.cpp" />
 		<Unit filename="src/TextureLoader.cpp" />
 		<Unit filename="src/Timer.cpp" />
 		<Extensions>

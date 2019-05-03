@@ -4,6 +4,7 @@
 #include <Timer.h>
 #include <TextureLoader.h>
 #include <GL/gl.h>
+#include <Player.h>
 
 
 class Enemy
@@ -35,6 +36,8 @@ class Enemy
         float frames;
 
         Timer *T3 = new Timer();
+
+        void checkCollision(Player*);
 
 
 

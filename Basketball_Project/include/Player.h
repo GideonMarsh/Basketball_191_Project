@@ -35,6 +35,8 @@ class Player
         Timer *Time = new Timer();
         TextureLoader *T = new TextureLoader();
 
+        int knockedBack;
+
     protected:
 
     private:

@@ -136,4 +136,14 @@ void Enemy::actions()
     }
 }
 
+void Enemy::checkCollision(Player* ply)
+{
+    if (xPos + xSize >= ply->xPos && ply->xPos + 0.5 >= xPos) {
+        if (yPos + ySize >= ply->yPos && ply->yPos + 0.5 >= yPos) {
+            if (ply->knockedBack == 0) {
+                ply->knockedBack = 10;
+            }
+        }
+    }
+}
 

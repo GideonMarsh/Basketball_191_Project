@@ -24,6 +24,8 @@ Player::Player()
 
     actionCounter = 0;
     action = "walk_left";
+
+    knockedBack = 0;
 }
 
 Player::~Player()
