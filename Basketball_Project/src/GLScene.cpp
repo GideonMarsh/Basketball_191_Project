@@ -161,7 +161,6 @@ GLint GLScene::drawGLScene()
             Enm[i].xMove=-0.01;
             Enm[i].action=1;
         }
-
         Enm[i].xPos+=Enm[i].xMove;
 */
         }
@@ -198,11 +197,16 @@ GLint GLScene::drawGLScene()
 
 
         glPushMatrix();
-        Ply->drawPlayer();
+
         KbMs->checkKeyDown();
 
         Ply->playerActions();
         shooterView->drawSlide(screenWidth, screenHeight);
+        glPushMatrix();
+        Ply->xPos=0;
+        Ply->yPos=0;
+        Ply->drawPlayer();
+        glPopMatrix();
 
         glPopMatrix();
     }

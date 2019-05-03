@@ -139,4 +139,3 @@ void Player::playerActions()
         yMax = -0.0;
     }
 }
-

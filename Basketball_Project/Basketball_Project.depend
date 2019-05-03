@@ -1,12 +1,12 @@
 # depslib dependency file v1.0
-1554764362 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\main.cpp
+1556596350 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1554763670 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\glscene.h
+1556596350 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\glscene.h
 	<windows.h>
 	<GL/glut.h>
 	<Slides.h>
@@ -24,7 +24,7 @@
 1554595496 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1554764783 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
+1556596358 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -33,8 +33,9 @@
 	<Player.h>
 	<Enemy.h>
 	<ShootScene.h>
+	<GameClock.h>
 
-1554335604 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
+1556596358 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
 	<Model.h>
 	<Parallax.h>
@@ -61,7 +62,7 @@
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\common\include\soil.h
 
-1554763670 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
+1556239070 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
 
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\model.cpp
@@ -71,7 +72,7 @@
 1554574607 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\parallax.cpp
 	"Parallax.h"
 
-1554763670 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
+1556596358 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\timer.h
@@ -264,7 +265,7 @@
 1554595496 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
-1554764765 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
+1554764819 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 
 1554577660 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\enemy.h
@@ -299,7 +300,7 @@
 	<GL/gl.h>
 	<TextureLoader.h>
 
-1554763670 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\shootscene.cpp
+1556916669 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\shootscene.cpp
 	"ShootScene.h"
 
 1554768120 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\shootscene.h
@@ -324,6 +325,8 @@
 
 1555971563 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\clockdigit.h
 	<TextureLoader.h>
+
+1556066877 ated upstream
 
 1556569756 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
@@ -380,6 +383,19 @@
 	"GameClock.h"
 
 1556126059 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gameclock.h
+
+1556066878 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\clockdigit.cpp
+	"ClockDigit.h"
+
+1556066877 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\clockdigit.h
+	<TextureLoader.h>
+
+1556066878 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\gameclock.cpp
+	"GameClock.h"
+
+1556066877 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\gameclock.h
+
+1554575118 shed changes
 	<GL/gl.h>
 	<TextureLoader.h>
 	<time.h>
@@ -447,4 +463,6 @@
 
 1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\timer.cpp
 	"Timer.h"
+
+1554575118 
 
