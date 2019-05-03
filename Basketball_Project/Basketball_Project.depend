@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1556596350 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\main.cpp
+1556921236 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
@@ -24,7 +24,7 @@
 1554595496 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1556596358 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
+1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -34,8 +34,9 @@
 	<Enemy.h>
 	<ShootScene.h>
 	<GameClock.h>
+	<Particles.h>
 
-1556596358 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
+1556921241 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
 	<Model.h>
 	<Parallax.h>
@@ -50,7 +51,7 @@
 	<windows.h>
 	<TextureLoader.h>
 
-1554763670 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\player.h
+1556921241 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\player.h
 	<GL/gl.h>
 	<TextureLoader.h>
 	<Timer.h>
@@ -62,7 +63,7 @@
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\common\include\soil.h
 
-1556239070 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
+1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
 
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\model.cpp
@@ -72,7 +73,7 @@
 1554574607 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\parallax.cpp
 	"Parallax.h"
 
-1556596358 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
+1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\timer.h
@@ -465,4 +466,13 @@
 	"Timer.h"
 
 1554575118 
+
+1556921029 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\particles.cpp
+	"Particles.h"
+
+1556920103 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\particles.h
+	<GL/gl.h>
+	<math.h>
+	<stdlib.h>
+	<iostream>
 

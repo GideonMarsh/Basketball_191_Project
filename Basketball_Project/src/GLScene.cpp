@@ -7,6 +7,8 @@
 #include <Enemy.h>
 #include <ShootScene.h>
 #include<GameClock.h>
+#include <Particles.h>
+
 
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
@@ -16,6 +18,8 @@ GameClock *Gc = new GameClock();
 
 Enemy Enm[20];
 TextureLoader * enmTex = new TextureLoader();
+
+Particles *pcl = new Particles();
 
 
 GLScene::GLScene()
@@ -202,13 +206,27 @@ GLint GLScene::drawGLScene()
 
         Ply->playerActions();
         shooterView->drawSlide(screenWidth, screenHeight);
+        if(Ply->win==true){
+            pcl->generateParticles(-0.1,-0.1);
+            pcl->drawParticle();
+            pcl->lifeTime();
+        }
         glPushMatrix();
         Ply->xPos=0;
         Ply->yPos=0;
         Ply->drawPlayer();
         glPopMatrix();
 
+
+
+
         glPopMatrix();
+
+
+
+
+
+
     }
 }
 

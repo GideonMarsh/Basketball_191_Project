@@ -27,6 +27,8 @@ class Player
         float xPos, yPos, zPos;
         float animateFrames;
 
+        bool win;
+
         int actionCounter;
         string action;
 

@@ -20,6 +20,8 @@ Player::Player()
     yPos = -0.3;
     zPos = -1;
 
+    win = true;
+
     actionCounter = 0;
     action = "walk_left";
 }

@@ -205,3 +205,9 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
         ply->action = "shoot";
     }
 }
+
+
+/*void Inputs::enemyMove(Enemy * enms, float xPos, float yPos)
+{
+    //move enemy based on player position
+}*/
