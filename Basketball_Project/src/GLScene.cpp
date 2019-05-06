@@ -168,7 +168,9 @@ GLint GLScene::drawGLScene()
             Enm[i].xMove=-0.01;
             Enm[i].action=1;
         }
-        Enm[i].xPos+=Enm[i].xMove;
+        //Enm[i].xPos+=Enm[i].xMove;
+        Enm[i].xPos=Enm[i].xPos+0.001*(Ply->xPos-Enm[i].xPos);
+        Enm[i].yPos=Enm[i].yPos+0.001*(Ply->yPos-Enm[i].yPos);
 
         }
 
@@ -214,9 +216,11 @@ GLint GLScene::drawGLScene()
         Ply->playerActions();
         shooterView->drawSlide(screenWidth, screenHeight);
         if(Ply->win==true){
-            pcl->generateParticles(-0.1,-0.1);
+
+            pcl->generateParticles();
             pcl->drawParticle();
             pcl->lifeTime();
+
         }
         glPushMatrix();
         Ply->xPos=0;

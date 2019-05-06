@@ -15,6 +15,7 @@ class Enemy
 
         void drawEnemy();
         void placeEnemy(float, float, float);
+
         void actions();
 
 

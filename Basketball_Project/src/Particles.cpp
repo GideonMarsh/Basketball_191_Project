@@ -12,8 +12,8 @@ Particles::~Particles()
 void Particles::drawParticle()
 {
     int i=0;
-    glPointSize(5);
-    glPushMatrix();
+    glPointSize(4);
+
     glBegin(GL_POINTS);
 
 
@@ -26,7 +26,7 @@ void Particles::drawParticle()
         i++;
     }
     glEnd();
-    glPopMatrix();
+
 }
 
 void Particles::lifeTime()
@@ -47,10 +47,10 @@ void Particles::lifeTime()
     }
 }
 
-void Particles::generateParticles(float mx, float my)
+void Particles::generateParticles()
 {
-    int i=0;
-    int newDrops = rand()%60+1;
+
+    int newDrops = rand()%600+1;
 
     if((numDrops + newDrops) > MAX_DROPS)
     {
@@ -60,13 +60,14 @@ void Particles::generateParticles(float mx, float my)
     for (int i=numDrops; i<numDrops+newDrops; i++){
         drops[i].alive=true;
 
-        //drops[i].radius = 1;
-        drops[i].xpos = mx;
-        drops[i].ypos = my;
+        drops[i].radius = 1;
+        drops[i].xpos = (float)(rand()%5)*0.1;
+        drops[i].ypos = (float)(rand()%5)*0.1;
+
 
 
         drops[i].explosionRadius = 0.01;
-        drops[i].angle = rand()%360;
+        drops[i].angle = rand()%180;
 
         drops[i].color = 255;
 

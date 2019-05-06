@@ -11,7 +11,7 @@
 using namespace std;
 
 
-#define MAX_DROPS 50000
+#define MAX_DROPS 500000
 
 #define PI 3.14159
 
@@ -24,8 +24,8 @@ class Particles
 
         int numDrops;
 
-        float mouseX;
-        float mouseY;
+
+        float mx, my;
 
         typedef struct{
 
@@ -36,6 +36,7 @@ class Particles
             float yDir;
             float color;
             float mass;
+
 
             float radius;
 
@@ -55,7 +56,7 @@ class Particles
 
         void drawParticle();            //drawing
         void lifeTime();                //update
-        void generateParticles(float, float);       //emitter
+        void generateParticles();       //emitter
 
 
     protected:

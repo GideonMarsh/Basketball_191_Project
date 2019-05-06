@@ -24,7 +24,7 @@
 1554595496 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
+1557105265 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -35,8 +35,9 @@
 	<ShootScene.h>
 	<GameClock.h>
 	<Particles.h>
+	<Sounds.h>
 
-1556921241 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
+1557118572 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
 	<Model.h>
 	<Parallax.h>
@@ -51,7 +52,7 @@
 	<windows.h>
 	<TextureLoader.h>
 
-1556921241 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\player.h
+1557101473 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\player.h
 	<GL/gl.h>
 	<TextureLoader.h>
 	<Timer.h>
@@ -63,7 +64,7 @@
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\common\include\soil.h
 
-1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
+1557105232 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
 
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\model.cpp
@@ -73,7 +74,7 @@
 1554574607 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\parallax.cpp
 	"Parallax.h"
 
-1556921241 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
+1557101473 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
 1552946262 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\timer.h
@@ -268,13 +269,14 @@
 1554595496 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
-1554764819 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
+1557119343 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 
-1554577660 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\enemy.h
+1557119343 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\enemy.h
 	<Timer.h>
 	<TextureLoader.h>
 	<GL/gl.h>
+	<Player.h>
 
 1556923585 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\slides.h
 	<GL/gl.h>
@@ -470,10 +472,10 @@
 
 1554575118 
 
-1556921029 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\particles.cpp
+1557118493 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\particles.cpp
 	"Particles.h"
 
-1556920103 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\particles.h
+1557105455 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\particles.h
 	<GL/gl.h>
 	<math.h>
 	<stdlib.h>
@@ -592,4 +594,109 @@
 1556152886 c:\users\gideon\documents\github\basketball_191_project\common\include\snds\ik_iaudiorecorder.h
 	"ik_IRefCounted.h"
 	"ik_ISoundSource.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\basketball_project\include\sounds.h
+	<SNDS/irrKlang.h>
+	<stdlib.h>
+	<iostream>
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_irrklangtypes.h
+	<wchar.h>
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_esoundoutputdrivers.h
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_esoundengineoptions.h
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_estreammodes.h
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1556925927 c:\users\mnutt\desktop\basketball_191_project\common\include\snds\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
+
+1556925927 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\sounds.cpp
+	"Sounds.h"
 

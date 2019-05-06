@@ -6,6 +6,7 @@
 #include<Parallax.h>
 #include<Player.h>
 
+
 class Inputs
 {
     public:
