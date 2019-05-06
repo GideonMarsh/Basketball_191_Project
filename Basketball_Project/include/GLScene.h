@@ -26,6 +26,9 @@ class GLScene
 
         bool landingFlag,menuFlag,gameFlag, helpFlag, exitFlag, flagShoot;
 
+        int enemySpeed = 0.001;
+        int enmNum = 3;
+
     protected:
 
     private:

@@ -34,7 +34,9 @@ class Particles
             float ypos;
             float xDir;
             float yDir;
-            float color;
+            float red;
+            float green;
+            float blue;
             float mass;
 
 

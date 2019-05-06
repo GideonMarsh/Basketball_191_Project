@@ -17,6 +17,7 @@ Player *Ply = new Player();
 GameClock *Gc = new GameClock();
 Sounds *Snd = new Sounds();
 
+
 Enemy Enm[20];
 TextureLoader * enmTex = new TextureLoader();
 
@@ -48,7 +49,7 @@ GLScene::~GLScene()
 GLint GLScene::initGL()
 {
     glShadeModel(GL_SMOOTH);                // for smooth animation transitions
-    glClearColor(1.0f,1.6f,0.7f,0.0f);      // background color (r,g,b,a) - f sets value as float (class example uses 1,0,0)
+    glClearColor(1.0f,1.6f,0.7f,1.0f);      // background color (r,g,b,a) - f sets value as float (class example uses 1,0,0)
     glClearDepth(1.0f);                     // decide what is at front and behind (depth)
     glEnable(GL_DEPTH_TEST);                // enable depth test flag for depth calculations
 
@@ -62,10 +63,15 @@ GLint GLScene::initGL()
    /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm12.png");
 
+
         for(int i=0;i<1;i++)
+
+        //for(int i=0;i<enmNum;i++)
+
     {
 
         Enm[i].enemyTex = enmTex->tex;
+
 
 
         /*Enm[i].xPos = (float)((rand())%10)/10;
@@ -73,6 +79,12 @@ GLint GLScene::initGL()
 
         Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);*/
         Enm[i].placeEnemy(0.5,0,-1);
+
+/*
+       Enm[i].xPos += 0.01;
+        Enm[i].yPos =0;
+
+        Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.5);*/
 
         Enm[i].enemyInit();
 
@@ -121,6 +133,7 @@ GLint GLScene::drawGLScene()
   if(landingFlag) //If the flag of landing page is true, draw the landing scene
   {
     glPushMatrix();
+    Snd->playMusic("sounds/dance_loop.mp3");
     landingPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
 
@@ -129,6 +142,7 @@ GLint GLScene::drawGLScene()
   if(menuFlag)
   {
     glPushMatrix();
+
     menuPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
   }
@@ -138,6 +152,7 @@ GLint GLScene::drawGLScene()
 
     if(gameFlag)
     {  //If game flag is true, draw game scene
+        Snd->stopAllSounds();
         glPushMatrix();
         Plx->drawSquare(screenWidth,screenHeight);
         glPopMatrix();
@@ -157,14 +172,23 @@ GLint GLScene::drawGLScene()
         /* ---------------------Enemy Drawing---------------------*/
         glPushMatrix();
         //objTex->binder();
+
         for(int i=0;i<1;i++){
+
+        /*for(int i=0;i<enmNum;i++){
+        */
 
         Enm[i].drawEnemy();
         //Enm[i].action=0;
         //Enm[i].actions();
 
+
         /*
         if(Enm[i].xPos<-0.5){
+
+
+        /*if(Enm[i].xPos<-0.5){
+
             Enm[i].xMove=0.01;
             Enm[i].action=0;
         }
@@ -173,8 +197,9 @@ GLint GLScene::drawGLScene()
             Enm[i].action=1;
         }*/
         //Enm[i].xPos+=Enm[i].xMove;
-        Enm[i].xPos=Enm[i].xPos+0.001*(Ply->xPos-Enm[i].xPos);
-        Enm[i].yPos=Enm[i].yPos+0.001*(Ply->yPos-Enm[i].yPos);
+        //t==speed of enemy
+        Enm[i].xPos=Enm[i].xPos+(0.001*(Ply->xPos-Enm[i].xPos));
+        Enm[i].yPos=Enm[i].yPos+(0.001*(Ply->yPos-Enm[i].yPos));
 
         }
 
@@ -225,10 +250,12 @@ GLint GLScene::drawGLScene()
             pcl->drawParticle();
             pcl->lifeTime();
 
+
         }
         glPushMatrix();
-        Ply->xPos=0;
-        Ply->yPos=0;
+        Ply->xPos=-0.4;
+        Ply->yPos=-0.4;
+        Ply->zPos=-0.5;
         Ply->drawPlayer();
         glPopMatrix();
 
