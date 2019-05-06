@@ -160,13 +160,13 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
         ply->action = "walk_right";
         break;
     }*/
-    if (ply->knockedBack > 7) {         // increase this number to give the player more invincibility frames after being hit
+    if (ply->knockedBack > 5) {         // increase this number to give the player more invincibility frames after being hit
         if (ply->xPos > -0.3) {
-            ply->playerTranslate(-0.05,0.0);
+            ply->playerTranslate(-0.03,0.0);
         }
         else {
             if (! plx->scroll("left",speed * 2, enm)) {
-                ply->playerTranslate(-0.05,0.0);
+                ply->playerTranslate(-0.03,0.0);
             }
         }
     }
@@ -174,11 +174,11 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
         if (move_right) {
             ply->action = "walk_right";
             if (ply->xPos < -0.3) {
-                ply->playerTranslate(0.025,0.0);
+                ply->playerTranslate(0.015,0.0);
             }
             else {
                 if (! plx->scroll("right",speed, enm)) {
-                    ply->playerTranslate(0.025,0.0);
+                    ply->playerTranslate(0.015,0.0);
                 }
             }
         }
@@ -186,11 +186,11 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
             if (move_left) {
                 ply->action = "walk_left";
                 if (ply->xPos > -0.3) {
-                    ply->playerTranslate(-0.025,0.0);
+                    ply->playerTranslate(-0.015,0.0);
                 }
                 else {
                     if (! plx->scroll("left",speed, enm)) {
-                        ply->playerTranslate(-0.025,0.0);
+                        ply->playerTranslate(-0.015,0.0);
                     }
                 }
             }
@@ -202,14 +202,14 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
             if (!move_right && !move_left) {
                 ply->action = "walk_right";
             }
-            ply->playerTranslate(0.0, 0.025);
+            ply->playerTranslate(0.0, 0.015);
         }
         else {
             if (move_down) {
                 if (!move_right && !move_left) {
                     ply->action = "walk_right";
                 }
-                ply->playerTranslate(0.0, -0.025);
+                ply->playerTranslate(0.0, -0.015);
             }
         }
         if (shoot) {

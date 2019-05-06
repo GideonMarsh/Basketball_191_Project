@@ -6,7 +6,7 @@ Enemy::Enemy()
 
     xPos = -0.3;
     yPos = 0.0;
-    zPos = -0.5;
+    zPos = -1.0;
 
     xSize = 0.15;
     ySize = 0.15;
@@ -141,7 +141,7 @@ void Enemy::checkCollision(Player* ply)
     if (xPos + xSize >= ply->xPos && ply->xPos + ply->xSize >= xPos) {
         if (yPos + ySize >= ply->yPos && ply->yPos + ply->ySize >= yPos) {
             if (ply->knockedBack == 0) {
-                ply->knockedBack = 14;                            // increase this number to knock the player back further
+                ply->knockedBack = 12;                            // increase this number to knock the player back further
             }
         }
     }

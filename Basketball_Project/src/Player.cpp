@@ -5,18 +5,18 @@ Player::Player()
     //ctor
     animateFrames = 7.0;
 
-    vertices[0].x = 0.0; vertices[0].y = 0.0; vertices[0].z = -1.0;
-    vertices[1].x = 1.0; vertices[1].y = 0.0; vertices[1].z = -1.0;
-    vertices[2].x = 1.0; vertices[2].y = 1.0; vertices[2].z = -1.0;
-    vertices[3].x = 0.0; vertices[3].y = 1.0; vertices[3].z = -1.0;
+    vertices[0].x = 0.0; vertices[0].y = 0.0; vertices[0].z = -0.3;
+    vertices[1].x = 1.0; vertices[1].y = 0.0; vertices[1].z = -0.3;
+    vertices[2].x = 1.0; vertices[2].y = 1.0; vertices[2].z = -0.3;
+    vertices[3].x = 0.0; vertices[3].y = 1.0; vertices[3].z = -0.3;
 
     xMin = 0.0;
     yMin = 0.0;
     xMax = 0.0;
     yMax = 0.0;
 
-    xSize = 0.5;
-    ySize = 0.5;
+    xSize = 0.3;
+    ySize = 0.3;
 
     //Starting position for player
     xPos = -0.3;
@@ -84,18 +84,18 @@ void Player::playerInit(char *filename)
 void Player::playerTranslate(float xChange, float yChange)
 {
     xPos += xChange;
-    if (xPos < -1.55) {
-        xPos = -1.55;
+    if (xPos < -0.8) {
+        xPos = -0.8;
     }
-    if (xPos > 1.1) {
-        xPos = 1.1;
+    if (xPos > 0.55) {
+        xPos = 0.55;
     }
     yPos += yChange;
-    if (yPos < -0.85) {
-        yPos = -0.85;
+    if (yPos < -0.45) {
+        yPos = -0.45;
     }
-    if (yPos > 0.5) {
-        yPos = 0.5;
+    if (yPos > 0.3) {
+        yPos = 0.3;
     }
 }
 
