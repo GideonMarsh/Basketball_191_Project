@@ -62,16 +62,18 @@ GLint GLScene::initGL()
    /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm12.png");
 
-        for(int i=0;i<2;i++)
+        for(int i=0;i<1;i++)
     {
 
         Enm[i].enemyTex = enmTex->tex;
 
 
-       Enm[i].xPos = (float)((rand())%10)/10;
+        /*Enm[i].xPos = (float)((rand())%10)/10;
         Enm[i].yPos = (float)(((rand()%20)-10)/10);
 
-        Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);
+        Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);*/
+        Enm[i].placeEnemy(0.5,0,-1);
+
         Enm[i].enemyInit();
 
     }
@@ -147,19 +149,21 @@ GLint GLScene::drawGLScene()
 
         Ply->drawPlayer();
         KbMs->checkKeyDown();
-        KbMs->playerInput(Ply,Plx,0.004);
+        KbMs->playerInput(Ply,Plx,Enm,0.004);
         Ply->playerActions();
+
+        Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
 
         /* ---------------------Enemy Drawing---------------------*/
         glPushMatrix();
         //objTex->binder();
-        for(int i=0;i<2;i++){
+        for(int i=0;i<1;i++){
 
         Enm[i].drawEnemy();
         //Enm[i].action=0;
         //Enm[i].actions();
 
-
+        /*
         if(Enm[i].xPos<-0.5){
             Enm[i].xMove=0.01;
             Enm[i].action=0;
@@ -167,7 +171,7 @@ GLint GLScene::drawGLScene()
         else if(Enm[i].xPos>0.5){
             Enm[i].xMove=-0.01;
             Enm[i].action=1;
-        }
+        }*/
         //Enm[i].xPos+=Enm[i].xMove;
         Enm[i].xPos=Enm[i].xPos+0.001*(Ply->xPos-Enm[i].xPos);
         Enm[i].yPos=Enm[i].yPos+0.001*(Ply->yPos-Enm[i].yPos);
@@ -176,7 +180,7 @@ GLint GLScene::drawGLScene()
 
         glPopMatrix();
 
-        for(int i = 0; i < 2; i++) {
+        for(int i = 0; i < 1; i++) {
             Enm[i].checkCollision(Ply);
         }
 

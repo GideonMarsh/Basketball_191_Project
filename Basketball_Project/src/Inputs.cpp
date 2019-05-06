@@ -131,7 +131,7 @@ void Inputs::keyEnv(Parallax * plx, float speed)
         plx->scroll("down",speed);
         break;
     }
-    */
+
     if (move_right) {
         plx->scroll("right",speed);
     }
@@ -139,7 +139,7 @@ void Inputs::keyEnv(Parallax * plx, float speed)
         if (move_left) {
             plx->scroll("left",speed);
         }
-    }
+    }*/
 }
 // Checks to see if the given key is being pressed down and modifies the movement variables accordingly
 void Inputs::checkKeyDown()
@@ -149,7 +149,7 @@ void Inputs::checkKeyDown()
     move_up = (GetKeyState(VK_UP) & 0x8000) ? true : false;
     move_down = (GetKeyState(VK_DOWN) & 0x8000) ? true : false;
 }
-void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
+void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
 {
     /*
     switch(wParam) {
@@ -160,16 +160,15 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
         ply->action = "walk_right";
         break;
     }*/
-    if (ply->knockedBack > 0) {
+    if (ply->knockedBack > 7) {         // increase this number to give the player more invincibility frames after being hit
         if (ply->xPos > -0.3) {
             ply->playerTranslate(-0.05,0.0);
         }
         else {
-            if (! plx->scroll("left",speed * 2)) {
+            if (! plx->scroll("left",speed * 2, enm)) {
                 ply->playerTranslate(-0.05,0.0);
             }
         }
-        ply->knockedBack -= 1;
     }
     else {
         if (move_right) {
@@ -178,7 +177,7 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
                 ply->playerTranslate(0.025,0.0);
             }
             else {
-                if (! plx->scroll("right",speed)) {
+                if (! plx->scroll("right",speed, enm)) {
                     ply->playerTranslate(0.025,0.0);
                 }
             }
@@ -190,7 +189,7 @@ void Inputs::playerInput(Player* ply, Parallax* plx, float speed)
                     ply->playerTranslate(-0.025,0.0);
                 }
                 else {
-                    if (! plx->scroll("left",speed)) {
+                    if (! plx->scroll("left",speed, enm)) {
                         ply->playerTranslate(-0.025,0.0);
                     }
                 }

@@ -26,6 +26,7 @@ class Player
         float xMin, yMin, xMax, yMax;
         float xPos, yPos, zPos;
         float animateFrames;
+        float xSize, ySize;
 
         bool win;
 

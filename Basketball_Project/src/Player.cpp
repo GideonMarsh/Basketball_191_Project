@@ -6,14 +6,17 @@ Player::Player()
     animateFrames = 7.0;
 
     vertices[0].x = 0.0; vertices[0].y = 0.0; vertices[0].z = -1.0;
-    vertices[1].x = 0.5; vertices[1].y = 0.0; vertices[1].z = -1.0;
-    vertices[2].x = 0.5; vertices[2].y = 0.5; vertices[2].z = -1.0;
-    vertices[3].x = 0.0; vertices[3].y = 0.5; vertices[3].z = -1.0;
+    vertices[1].x = 1.0; vertices[1].y = 0.0; vertices[1].z = -1.0;
+    vertices[2].x = 1.0; vertices[2].y = 1.0; vertices[2].z = -1.0;
+    vertices[3].x = 0.0; vertices[3].y = 1.0; vertices[3].z = -1.0;
 
     xMin = 0.0;
     yMin = 0.0;
     xMax = 0.0;
     yMax = 0.0;
+
+    xSize = 0.5;
+    ySize = 0.5;
 
     //Starting position for player
     xPos = -0.3;
@@ -38,6 +41,9 @@ void Player::drawPlayer()
     T->binder();
     glPushMatrix();
     glTranslated(xPos,yPos,zPos);
+
+    glScaled(xSize,ySize,1.0);
+
     glBegin(GL_QUADS);
 
     glTexCoord2f(xMin,yMax);

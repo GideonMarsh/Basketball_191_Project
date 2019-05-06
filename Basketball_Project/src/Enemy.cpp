@@ -8,8 +8,8 @@ Enemy::Enemy()
     yPos = 0.0;
     zPos = -0.5;
 
-    xSize = 0.05;
-    ySize = 0.05;
+    xSize = 0.15;
+    ySize = 0.15;
 
     /*frames = 4.0;
 
@@ -138,10 +138,10 @@ void Enemy::actions()
 
 void Enemy::checkCollision(Player* ply)
 {
-    if (xPos + xSize >= ply->xPos && ply->xPos + 0.5 >= xPos) {
-        if (yPos + ySize >= ply->yPos && ply->yPos + 0.5 >= yPos) {
+    if (xPos + xSize >= ply->xPos && ply->xPos + ply->xSize >= xPos) {
+        if (yPos + ySize >= ply->yPos && ply->yPos + ply->ySize >= yPos) {
             if (ply->knockedBack == 0) {
-                ply->knockedBack = 10;
+                ply->knockedBack = 14;                            // increase this number to knock the player back further
             }
         }
     }

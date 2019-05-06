@@ -5,7 +5,7 @@
 #include<Model.h>
 #include<Parallax.h>
 #include<Player.h>
-
+#include<Enemy.h>
 
 class Inputs
 {
@@ -22,7 +22,7 @@ class Inputs
         void mouseEventMove(Model *, double, double);
 
         void keyEnv(Parallax *,float);                    // for parallax movement (moving the background using the keys)
-        void playerInput(Player *, Parallax*, float);
+        void playerInput(Player *, Parallax*, Enemy*, float);
 
         //void enemyMove(Enemy *, float, float);
 
