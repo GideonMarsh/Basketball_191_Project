@@ -138,8 +138,21 @@ void Enemy::actions()
 
 void Enemy::checkCollision(Player* ply)
 {
-    if (xPos + xSize >= ply->xPos && ply->xPos + ply->xSize >= xPos) {
-        if (yPos + ySize >= ply->yPos && ply->yPos + ply->ySize >= yPos) {
+    // using modified coordinates for the player and enemy hitboxes instead of the raw x and y coordinate values
+    // this allows us to adjust the size of the hitboxes to fit the sprites
+    float enmLeftBound = xPos + xSize * 0.2;
+    float enmRightBound = xPos + xSize * 0.6;
+    float plyLeftBound = ply->xPos + ply->xSize * 0.4;
+    float plyRightBound = ply->xPos + ply->xSize * 0.8;
+
+    float enmBottomBound = yPos + ySize * 0.1;
+    float enmTopBound = yPos + ySize * 0.9;
+    float plyBottomBound = ply->yPos + ply->ySize * 0.1;
+    float plyTopBound = ply->yPos + ply->ySize * 0.8;
+
+    // ABBA collision detection
+    if (enmRightBound >= plyLeftBound && plyRightBound >= enmLeftBound) {
+        if (enmTopBound >= plyBottomBound && plyTopBound >= enmBottomBound) {
             if (ply->knockedBack == 0) {
                 ply->knockedBack = 12;                            // increase this number to knock the player back further
             }

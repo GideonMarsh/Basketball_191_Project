@@ -69,7 +69,7 @@ void Particles::generateParticles()
         drops[i].explosionRadius = 0.01;
         drops[i].angle = rand()%180;
 
-        drops[i].color = 255;
+        //drops[i].color = 255;
 
         drops[i].velocityX = sin(drops[i].angle)*drops[i].explosionRadius;
         drops[i].velocityY = cos(drops[i].angle)*drops[i].explosionRadius;
