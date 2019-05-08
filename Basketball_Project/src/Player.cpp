@@ -20,7 +20,7 @@ Player::Player()
 
     //Starting position for player
     xPos = -0.3;
-    yPos = -0.3;
+    yPos = -0.05;
     zPos = -1;
 
     win = true;
@@ -84,18 +84,18 @@ void Player::playerInit(char *filename)
 void Player::playerTranslate(float xChange, float yChange)
 {
     xPos += xChange;
-    if (xPos < -0.8) {
-        xPos = -0.8;
+    if (xPos < -1.0) {
+        xPos = -1.0;
     }
-    if (xPos > 0.55) {
-        xPos = 0.55;
+    if (xPos > 0.7) {
+        xPos = 0.7;
     }
     yPos += yChange;
-    if (yPos < -0.45) {
-        yPos = -0.45;
+    if (yPos < -0.6) {
+        yPos = -0.6;
     }
-    if (yPos > 0.3) {
-        yPos = 0.3;
+    if (yPos > 0.35) {
+        yPos = 0.35;
     }
 }
 

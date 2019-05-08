@@ -9,9 +9,9 @@ GameClock::GameClock()
     xMax = 0.53;
     yMax = 0.33;
 
-    xPos = -1.135;
-    yPos = 0.55;
-    zPos = -1;
+    xPos = -0.5675;
+    yPos = 0.275;
+    zPos = 0;
 
     minutes = 0;
     seconds = 0;
@@ -31,11 +31,11 @@ void GameClock::clockInit(char* filename)
     Tex.loadTexture(filename);
     for (int i = 0; i < 3; i++) {
         digits[i].digitInit("images/game_clock_digits.jpg");
-        digits[i].xPos = -1.45 + (i * 0.16);
+        digits[i].xPos = -0.725 + (i * 0.08);
         if (i > 1) {
-            digits[i].xPos += 0.05;
+            digits[i].xPos += 0.025;
         }
-        digits[i].yPos = 0.55;
+        digits[i].yPos = 0.275;
     }
     isActive = true;
 }
@@ -100,13 +100,13 @@ void GameClock::drawClock()
         glVertex3f(0.0,0.0,-1.0);
 
         glTexCoord2f(xMax,yMax);
-        glVertex3f(0.06,0.0,-1.0);
+        glVertex3f(0.03,0.0,-1.0);
 
         glTexCoord2f(xMax,yMin);
-        glVertex3f(0.06,0.24,-1.0);
+        glVertex3f(0.03,0.12,-1.0);
 
         glTexCoord2f(xMin,yMin);
-        glVertex3f(0.0,0.24,-1.0);
+        glVertex3f(0.0,0.12,-1.0);
 
         glEnd();
 

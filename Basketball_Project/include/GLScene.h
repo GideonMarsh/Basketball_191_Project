@@ -26,8 +26,12 @@ class GLScene
 
         bool landingFlag,menuFlag,gameFlag, helpFlag, exitFlag, flagShoot;
 
-        int enemySpeed = 0.001;
+        float enemySpeed = 0.001;
         int enmNum = 3;
+        float gameTime = 60.0;
+
+        void startingLevel();
+        void nextLevel();
 
     protected:
 

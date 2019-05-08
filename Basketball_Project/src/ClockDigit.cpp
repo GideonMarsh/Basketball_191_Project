@@ -9,7 +9,7 @@ ClockDigit::ClockDigit()
 
     xPos = 0.0;
     yPos = 0.0;
-    zPos = -1;
+    zPos = 0;
     //ctor
 }
 
@@ -96,13 +96,13 @@ void ClockDigit::drawDigit()
     glVertex3f(0.0,0.0,-1.0);
 
     glTexCoord2f(xMax,yMax);
-    glVertex3f(0.16,0.0,-1.0);
+    glVertex3f(0.08,0.0,-1.0);
 
     glTexCoord2f(xMax,yMin);
-    glVertex3f(0.16,0.24,-1.0);
+    glVertex3f(0.08,0.12,-1.0);
 
     glTexCoord2f(xMin,yMin);
-    glVertex3f(0.0,0.24,-1.0);
+    glVertex3f(0.0,0.12,-1.0);
 
     glEnd();
     glPopMatrix();

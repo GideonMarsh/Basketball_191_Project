@@ -62,7 +62,7 @@ GLint GLScene::initGL()
    /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm12.png");
 
-        for(int i=0;i<1;i++)
+        for(int i=0;i<20;i++)
     {
 
         Enm[i].enemyTex = enmTex->tex;
@@ -71,8 +71,8 @@ GLint GLScene::initGL()
         /*Enm[i].xPos = (float)((rand())%10)/10;
         Enm[i].yPos = (float)(((rand()%20)-10)/10);
 
-        Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);*/
-        Enm[i].placeEnemy(0.5,0,-1);
+        Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);
+        Enm[i].placeEnemy(0.5,0,-1);*/
 
         Enm[i].enemyInit();
 
@@ -97,7 +97,7 @@ GLint GLScene::initGL()
     Ply->playerInit("images/dribble.png");
     Gc->clockInit("images/game_clock.jpg");
 
-    Gc->startClock(0,60,0);                         // JUST FOR TESTING! Should be called at start of stage to set timer
+    startingLevel();
 
     //Initializing Shoot Scene
     shooterView->sceneInit("images/shoot.png");
@@ -144,8 +144,9 @@ GLint GLScene::drawGLScene()
 
         if (Gc->timeAction()) {
             // Code for running out of time goes here
+            nextLevel();
         }
-        Gc->drawClock();
+
 
         Ply->drawPlayer();
         KbMs->checkKeyDown();
@@ -154,7 +155,7 @@ GLint GLScene::drawGLScene()
 
          /* ---------------------Enemy Drawing---------------------*/
         //objTex->binder();
-        for(int i=0;i<1;i++){
+        for(int i=0;i<enmNum;i++){
 
         Enm[i].drawEnemy();
         //Enm[i].action=0;
@@ -179,7 +180,7 @@ GLint GLScene::drawGLScene()
     /*-----------------------------------------End of Enemy drawing-----------*/
 
         Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
-
+        Gc->drawClock();
     }
 
     if(helpFlag)
@@ -313,3 +314,45 @@ int GLScene::winMsg(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         }
 	}
 }
+
+void GLScene::startingLevel()
+{
+    enmNum = 3;
+    enemySpeed = 0.006;
+    gameTime = 30.0;
+
+    Ply->xPos = Ply->yPos = -0.3;
+
+    for (int i = 0; i < enmNum; i++) {
+        Enm[i].placeEnemy((((rand() % 23) + 5) / 10.0),(((rand() % 8) - 4) / 10.0),-1.0);
+        Enm[i].speed = enemySpeed;
+        Enm[i].aiType = rand() % 12;
+    }
+
+    Gc->startClock(0,(int) gameTime,((int)(gameTime * 10)) % 10);
+}
+
+void GLScene::nextLevel()
+{
+    gameTime = ceil(gameTime * 9.5) / 10.0;
+    gameTime < 10.0 ? gameTime = 10.0 : NULL;
+
+    enmNum++;
+    enmNum > 20 ? enmNum = 20 : NULL;
+
+    enemySpeed = enemySpeed + 0.0002;
+
+    Ply->xPos = -0.3;
+    Ply->yPos = -0.05;
+    Plx->xMax = 0.4;
+    Plx->xMin = 0.0;
+
+    for (int i = 0; i < enmNum; i++) {
+        Enm[i].placeEnemy((((rand() % 23) + 5) / 10.0),(((rand() % 8) - 4) / 10.0),-1.0);
+        Enm[i].speed = enemySpeed;
+        Enm[i].aiType = rand() % 12;
+    }
+
+    Gc->startClock(0,(int) gameTime,((int)(gameTime * 10)) % 10);
+}
+

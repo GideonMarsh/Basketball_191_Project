@@ -55,7 +55,7 @@ bool Parallax::scroll(string direction, float speed, Enemy *enm)
         xMin = xMin - speed;
         xMax = xMax - speed;
         for (int i = 0; i < 20; i++) {
-            enm[i].xPos += speed * 3.8;
+            enm[i].xPos += speed * 4.5;
         }
         return true;
     }
@@ -64,7 +64,7 @@ bool Parallax::scroll(string direction, float speed, Enemy *enm)
             xMin = xMin + speed;
             xMax = xMax + speed;
             for (int i = 0; i < 20; i++) {
-                enm[i].xPos -= speed * 3.8;
+                enm[i].xPos -= speed * 4.5;
             }
             return true;
         }

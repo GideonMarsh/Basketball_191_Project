@@ -8,8 +8,8 @@ Enemy::Enemy()
     yPos = 0.0;
     zPos = -1.0;
 
-    xSize = 0.15;
-    ySize = 0.15;
+    xSize = 0.19;
+    ySize = 0.19;
 
     /*frames = 4.0;
 
@@ -66,16 +66,16 @@ void Enemy::drawEnemy()
     glBegin(GL_QUADS);
 
     glTexCoord2f(xMin,yMax);
-    glVertex3f(1.0,0.0,0.0);
+    glVertex3f(1.0,0.0,-0.2);
 
     glTexCoord2f(xMax,yMax);
-    glVertex3f(0.0,0.0, 0.0);
+    glVertex3f(0.0,0.0, -0.2);
 
     glTexCoord2f(xMax,yMin);
-    glVertex3f(0.0,1.0, 0.0);
+    glVertex3f(0.0,1.0, -0.2);
 
     glTexCoord2f(xMin,yMin);
-    glVertex3f(1.0,1.0, 0.0);
+    glVertex3f(1.0,1.0, -0.2);
 
     glEnd();
 
@@ -144,7 +144,7 @@ void Enemy::checkCollision(Player* ply)
     float plyRightBound = ply->xPos + ply->xSize * 0.8;
 
     float enmBottomBound = yPos + ySize * 0.1;
-    float enmTopBound = yPos + ySize * 0.9;
+    float enmTopBound = yPos + ySize * 0.8;
     float plyBottomBound = ply->yPos + ply->ySize * 0.1;
     float plyTopBound = ply->yPos + ply->ySize * 0.8;
 
@@ -152,7 +152,8 @@ void Enemy::checkCollision(Player* ply)
     if (enmRightBound >= plyLeftBound && plyRightBound >= enmLeftBound) {
         if (enmTopBound >= plyBottomBound && plyTopBound >= enmBottomBound) {
             if (ply->knockedBack == 0) {
-                ply->knockedBack = 12;                            // increase this number to knock the player back further
+                ply->knockedBack = 15;                            // increase this number to knock the player back further
+                aiType = 0;
             }
         }
     }
@@ -175,20 +176,29 @@ void Enemy::enemyMovement(Player* ply)
         }
         break;
     case 2:             // follow player only on y axis (moves slower than other AI)
+    case 3:
+    case 4:
+    case 5:
+    case 6:
         if (yDif < -0.02 || yDif > 0.02) {
             if (yDif > 0) {
-                yPos=yPos+(speed / 2.5);
+                yPos=yPos+(speed / 2.2);
             }
             else {
-                yPos=yPos-(speed / 2.5);
+                yPos=yPos-(speed / 2.2);
             }
         }
         break;
-    case 3:             // chase player, get slower when closer
-        xPos=xPos+speed*((ply->xPos + (ply->xSize / 2.0)) - (xPos + (xSize / 2.0)));
+    case 7:             // chase player, get slower when closer
+        if (xDif > 0) {
+            xPos=xPos+speed*3.0*((ply->xPos + (ply->xSize / 2.0)) - (xPos + (xSize / 2.0)));
+        }
+        else {
+            xPos=xPos+speed*((ply->xPos + (ply->xSize / 2.0)) - (xPos + (xSize / 2.0)));
+        }
         yPos=yPos+speed*((ply->yPos + (ply->ySize / 2.0)) - (yPos + (ySize / 2.0)));
         break;
-    case 4:             // chase player at consistent speed, tries to get in front of them
+    case 8:             // chase player at consistent speed, tries to get in front of them
         if (xDif + 0.2 < -0.1 || xDif + 0.2 > 0.1) {
             if (xDif + 0.2 > 0) {
                 xPos=xPos+(speed / 2);
@@ -199,10 +209,10 @@ void Enemy::enemyMovement(Player* ply)
         }
         if (yDif < -0.1 || yDif > 0.1) {
             if (yDif > 0) {
-                yPos=yPos+(speed / 1.2);
+                yPos=yPos+(speed / 1.1);
             }
             else {
-                yPos=yPos-(speed / 1.2);
+                yPos=yPos-(speed / 1.1);
             }
         }
         break;
