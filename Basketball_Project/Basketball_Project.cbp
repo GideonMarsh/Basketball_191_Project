@@ -53,6 +53,7 @@
 		<Unit filename="include/GLScene.h" />
 		<Unit filename="include/GameClock.h" />
 		<Unit filename="include/Inputs.h" />
+		<Unit filename="include/Levels.h" />
 		<Unit filename="include/Model.h" />
 		<Unit filename="include/Parallax.h" />
 		<Unit filename="include/Particles.h" />
@@ -69,6 +70,7 @@
 		<Unit filename="src/GLScene.cpp" />
 		<Unit filename="src/GameClock.cpp" />
 		<Unit filename="src/Inputs.cpp" />
+		<Unit filename="src/Levels.cpp" />
 		<Unit filename="src/Model.cpp" />
 		<Unit filename="src/Parallax.cpp" />
 		<Unit filename="src/Particles.cpp" />

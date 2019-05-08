@@ -71,7 +71,6 @@ GLint GLScene::initGL()
 
         /*Enm[i].xPos = (float)((rand())%10)/10;
         Enm[i].yPos = (float)(((rand()%20)-10)/10);
-
         Enm[i].placeEnemy(Enm[i].xPos,Enm[i].yPos,-0.3);
         Enm[i].placeEnemy(0.5,0,-1);*/
 
@@ -124,6 +123,7 @@ GLint GLScene::drawGLScene()
     glPushMatrix();
     landingPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
+    Snd->playMusic("sounds/poss credits.mp3");
 
   }
 
@@ -360,4 +360,3 @@ void GLScene::nextLevel()
 
     Gc->startClock(0,(int) gameTime,((int)(gameTime * 10)) % 10);
 }
-
