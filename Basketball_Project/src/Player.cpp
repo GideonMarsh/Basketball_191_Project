@@ -140,12 +140,29 @@ void Player::playerActions()
         yMin = 0.5;
         yMax = 1.0;
     }
-    if (action == "shoot") {
+     if (action == "shoot" && Time->getTicks() > 80) {
    //    Need to figure out proper frames for shooting animation
-        xMin = 1.0/animateFrames;
-        xMax = 2.0/animateFrames;
+    //NEED TO MAKE SHOOT ANIMATION PLAY ONLY ONCE
 
-        yMin = -0.8;
-        yMax = -0.0;
+        if (actionCounter != 3) {
+            actionCounter = 3;
+        }
+
+        if (xMax != 1.0) {
+        xMin += 1.0/animateFrames;
+        xMax += 1.0/animateFrames;
+        }
+
+
+//        else {
+//            action = "stand";
+//        }
+
+
+
+        yMin = 0.43;
+        yMax = 1.0;
+        Time->reset();
+
     }
 }
