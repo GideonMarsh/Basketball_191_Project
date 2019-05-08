@@ -171,17 +171,9 @@ GLint GLScene::drawGLScene()
         }*/
         //Enm[i].xPos+=Enm[i].xMove;
 
-        //Enemy chases player by moving their center point closer to the player's center point
-        Enm[i].xPos=Enm[i].xPos+0.003*((Ply->xPos + (Ply->xSize / 2.0)) - (Enm[i].xPos + (Enm[i].xSize / 2.0)));
-        //Enemy moves faster in y direction than x direction - makes it look like they're blocking the way forward
-        //If x faster than y, looks like they're chasing player down the court
-        Enm[i].yPos=Enm[i].yPos+0.008*((Ply->yPos + (Ply->ySize / 2.0)) - (Enm[i].yPos + (Enm[i].ySize / 2.0)));
-        //Different enemies should ideally have different AI like this to make them less predictable
+        Enm[i].enemyMovement(Ply);
 
-        }
-
-        for(int i = 0; i < 1; i++) {
-            Enm[i].checkCollision(Ply);
+        Enm[i].checkCollision(Ply);
         }
 
     /*-----------------------------------------End of Enemy drawing-----------*/

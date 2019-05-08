@@ -18,6 +18,9 @@ class Enemy
 
         void actions();
 
+        void enemyMovement(Player*);
+        float speed;
+        int aiType;
 
         int action=0;
 

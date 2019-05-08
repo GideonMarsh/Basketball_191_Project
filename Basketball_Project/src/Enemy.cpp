@@ -24,10 +24,8 @@ Enemy::Enemy()
 
     xMove=0.01;
 
-
-
-
-
+    speed = 0.01;
+    aiType = 0;
 }
 
 Enemy::~Enemy()
@@ -157,6 +155,58 @@ void Enemy::checkCollision(Player* ply)
                 ply->knockedBack = 12;                            // increase this number to knock the player back further
             }
         }
+    }
+}
+
+void Enemy::enemyMovement(Player* ply)
+{
+    float xDif = (ply->xPos + (ply->xSize / 2.0)) - (xPos + (xSize / 2.0));     // x axis distance from player
+    float yDif = (ply->yPos + (ply->ySize / 2.0)) - (yPos + (ySize / 2.0));     // y axis distance from player
+
+    switch (aiType) {
+    case 1:             // follow player only on x axis
+        if (xDif < -0.02 || xDif > 0.02) {
+            if (xDif > 0) {
+                xPos=xPos+speed;
+            }
+            else {
+                xPos=xPos-speed;
+            }
+        }
+        break;
+    case 2:             // follow player only on y axis (moves slower than other AI)
+        if (yDif < -0.02 || yDif > 0.02) {
+            if (yDif > 0) {
+                yPos=yPos+(speed / 2.5);
+            }
+            else {
+                yPos=yPos-(speed / 2.5);
+            }
+        }
+        break;
+    case 3:             // chase player, get slower when closer
+        xPos=xPos+speed*((ply->xPos + (ply->xSize / 2.0)) - (xPos + (xSize / 2.0)));
+        yPos=yPos+speed*((ply->yPos + (ply->ySize / 2.0)) - (yPos + (ySize / 2.0)));
+        break;
+    case 4:             // chase player at consistent speed, tries to get in front of them
+        if (xDif + 0.2 < -0.1 || xDif + 0.2 > 0.1) {
+            if (xDif + 0.2 > 0) {
+                xPos=xPos+(speed / 2);
+            }
+            else {
+                xPos=xPos-speed;
+            }
+        }
+        if (yDif < -0.1 || yDif > 0.1) {
+            if (yDif > 0) {
+                yPos=yPos+(speed / 1.2);
+            }
+            else {
+                yPos=yPos-(speed / 1.2);
+            }
+        }
+        break;
+    default:;           // remain stationary
     }
 }
 
