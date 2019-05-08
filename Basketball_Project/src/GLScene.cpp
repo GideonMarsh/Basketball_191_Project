@@ -36,6 +36,7 @@ GLScene::GLScene()
     helpFlag = false; //Help page
     exitFlag = false; //Confirm to quit scene
     flagShoot = false; //Shoot screen
+    takenShot = false; //True when player hits space while on shot screen
 }
 
 GLScene::~GLScene()
@@ -224,7 +225,7 @@ GLint GLScene::drawGLScene()
         glPushMatrix();
         Ply->xPos=0.18;
         Ply->yPos=-0.38;
-        Ply->action = "shoot";
+       // Ply->action = "shoot";
         Ply->drawPlayer();
         glPopMatrix();
 
@@ -238,6 +239,9 @@ GLint GLScene::drawGLScene()
 
 
 
+    }
+    if (takenShot) {
+        Ply->action = "shoot";
     }
 }
 

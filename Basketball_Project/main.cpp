@@ -474,7 +474,14 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=true;
+//                    Ply->action = "stand";
             }
+             if(keys[VK_SPACE] && Scene->flagShoot == true) {
+                    Scene->takenShot = true;
+
+//                    Ply->action = "stand";
+            }
+
 
             //User pressed enter, resume game
             if(Scene->helpFlag == true && keys[82])

@@ -1,4 +1,5 @@
 #include "Inputs.h"
+#include "GLScene.h"
 
 Inputs::Inputs()
 {
@@ -212,9 +213,9 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
                 ply->playerTranslate(0.0, -0.015);
             }
         }
-        if (shoot) {
-            ply->action = "shoot";
-        }
+//        if (shoot && ->Scene->flagShoot) {
+//            ply->action = "shoot";
+//        }
     }
 }
 

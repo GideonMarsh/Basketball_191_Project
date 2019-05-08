@@ -60,4 +60,6 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 
     glEnd();
     glPopMatrix();
+
+
 }
