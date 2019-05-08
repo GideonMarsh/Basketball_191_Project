@@ -224,6 +224,7 @@ GLint GLScene::drawGLScene()
         glPushMatrix();
         Ply->xPos=0.18;
         Ply->yPos=-0.38;
+        Ply->action = "shoot";
         Ply->drawPlayer();
         glPopMatrix();
 
