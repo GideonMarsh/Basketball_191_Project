@@ -23,8 +23,10 @@ class GLScene
         Slides *helpPage = new Slides();
         Slides *popUp = new Slides();
         ShootScene *shooterView = new ShootScene();
+        Slides *gameOverPage = new Slides();
 
         bool landingFlag,menuFlag,gameFlag, helpFlag, exitFlag, flagShoot, takenShot;
+        bool gameOverFlag;
 
         float enemySpeed = 0.001;
         int enmNum = 3;

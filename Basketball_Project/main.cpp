@@ -393,7 +393,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
            }
 
                 //If user pressed N in menu scene, then go to game
-               if(keys[78])
+               if(Scene->menuFlag && keys[78])
                {
                     Scene->landingFlag =false;
                     Scene->menuFlag=false;
@@ -401,6 +401,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
 
                }
 
@@ -453,7 +454,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                }
 
             //User pressed H for help
-            if(keys[72])
+            if(Scene->menuFlag && keys[72])
                {
                     Scene->landingFlag =false;
                     Scene->menuFlag=false;
@@ -505,6 +506,8 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
             }
+
+
 		}
 	}
 

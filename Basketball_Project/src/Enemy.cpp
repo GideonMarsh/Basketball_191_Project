@@ -53,7 +53,7 @@ void Enemy::drawEnemy()
 {
     glPushMatrix();
 
-    glTranslated(xPos,yPos,zPos);
+   glTranslated(xPos,yPos,zPos);
 
     glRotated(rotateX,1,0,0);
     glRotated(rotateY,0,1,0);
