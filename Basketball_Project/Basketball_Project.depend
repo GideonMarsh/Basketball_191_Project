@@ -340,61 +340,67 @@
 
 1556066877 ated upstream
 
-1556918118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
+1557363191 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
 	<iostream>
 	<windows.h>
 
-1556567936 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\glscene.h
+1557359794 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\glscene.h
 	<windows.h>
 	<GL/glut.h>
 	<Slides.h>
 	<ShootScene.h>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\gl\glut.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\gl\glut.h
 	<windows.h>
 	<stdlib.h>
 	<GL/gl.h>
 	<GL/glu.h>
 
-1554571826 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\slides.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\slides.h
 	<GL/gl.h>
 	<TextureLoader.h>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\textureloader.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\textureloader.h
 	<Soil.h>
 	<GL/gl.h>
 	<iostream>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\soil.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\soil.h
 
-1554760676 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\shootscene.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\shootscene.h
 	<GL/gl.h>
 	<TextureLoader.h>
 
-1555975190 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\clockdigit.cpp
+1557347127 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\clockdigit.cpp
 	"ClockDigit.h"
 
-1555975190 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\clockdigit.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\clockdigit.h
 	<TextureLoader.h>
 
-1554767011 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\enemy.cpp
+1557347127 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\enemy.cpp
 	"Enemy.h"
 
-1554577988 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\enemy.h
+1557347127 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\enemy.h
 	<Timer.h>
 	<TextureLoader.h>
 	<GL/gl.h>
+	<Player.h>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\timer.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\timer.h
 	<time.h>
 
-1556126059 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gameclock.cpp
+1557347127 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gameclock.cpp
 	"GameClock.h"
 
-1556126059 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gameclock.h
+1557255755 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gameclock.h
+	<GL/gl.h>
+	<TextureLoader.h>
+	<time.h>
+	<Timer.h>
+	<ClockDigit.h>
 
 1557360235 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\clockdigit.cpp
 	"ClockDigit.h"
@@ -414,13 +420,13 @@
 	<Timer.h>
 	<ClockDigit.h>
 
-1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gllight.cpp
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\gllight.cpp
 	"GLLight.h"
 
-1554586966 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gllight.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1556918711 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\glscene.cpp
+1557361850 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -430,50 +436,55 @@
 	<Enemy.h>
 	<ShootScene.h>
 	<GameClock.h>
+	<Particles.h>
+	<Sounds.h>
 
-1556917481 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\inputs.h
+1557184908 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\inputs.h
 	<windows.h>
 	<Model.h>
 	<Parallax.h>
 	<Player.h>
+	<Enemy.h>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\model.h
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\model.h
 	<windows.h>
 	<GL/glut.h>
 
-1554575118 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\parallax.h
+1557184908 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\parallax.h
 	<iostream>
 	<windows.h>
 	<TextureLoader.h>
+	<Enemy.h>
 
-1554691421 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\player.h
+1557184908 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\player.h
 	<GL/gl.h>
 	<TextureLoader.h>
 	<Timer.h>
 
-1554767011 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\inputs.cpp
+1557359794 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
+	"GLScene.h"
 
-1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\model.cpp
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\model.cpp
 	"Model.h"
 	<TextureLoader.h>
 
-1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\parallax.cpp
+1557347127 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\parallax.cpp
 	"Parallax.h"
 
-1556917481 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\player.cpp
+1557354780 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
-1556917481 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\shootscene.cpp
+1557359794 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\shootscene.cpp
 	"ShootScene.h"
 
-1554591570 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\slides.cpp
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\slides.cpp
 	"Slides.h"
 
-1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\textureloader.cpp
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\textureloader.cpp
 	"TextureLoader.h"
 
-1554575118 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\timer.cpp
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\timer.cpp
 	"Timer.h"
 
 1554575118 
@@ -717,4 +728,124 @@
 
 1557362858 c:\users\gideon\documents\github\basketball_191_project\basketball_project\include\levels.h
 	<GLScene.h>
+
+1557255758 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\particles.h
+	<GL/gl.h>
+	<math.h>
+	<stdlib.h>
+	<iostream>
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\sounds.h
+	<SNDS/irrKlang.h>
+	<stdlib.h>
+	<iostream>
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\irrklang.h
+	"ik_irrKlangTypes.h"
+	"ik_vec3d.h"
+	"ik_IRefCounted.h"
+	"ik_IVirtualRefCounted.h"
+	"ik_ESoundOutputDrivers.h"
+	"ik_ESoundEngineOptions.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+	"ik_ISoundEngine.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_IAudioStream.h"
+	"ik_IAudioStreamLoader.h"
+	"ik_ISoundEffectControl.h"
+	"ik_ISoundStopEventReceiver.h"
+	"ik_IFileFactory.h"
+	"ik_IFileReader.h"
+	"ik_ISoundDeviceList.h"
+	"ik_IAudioRecorder.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_irrklangtypes.h
+	<wchar.h>
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_vec3d.h
+	<math.h>
+	"ik_irrKlangTypes.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_irefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_ivirtualrefcounted.h
+	"ik_irrKlangTypes.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_esoundoutputdrivers.h
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_esoundengineoptions.h
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_estreammodes.h
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_saudiostreamformat.h
+	"ik_IRefCounted.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isoundengine.h
+	"ik_IRefCounted.h"
+	"ik_vec3d.h"
+	"ik_ISoundSource.h"
+	"ik_ISound.h"
+	"ik_EStreamModes.h"
+	"ik_IFileFactory.h"
+	"ik_ISoundMixedOutputReceiver.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isoundsource.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+	"ik_EStreamModes.h"
+	"ik_SAudioStreamFormat.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isound.h
+	"ik_IVirtualRefCounted.h"
+	"ik_ISoundEffectControl.h"
+	"ik_vec3d.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isoundeffectcontrol.h
+	"ik_IVirtualRefCounted.h"
+	"ik_vec3d.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_ifilefactory.h
+	"ik_IRefCounted.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isoundmixedoutputreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_iaudiostream.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_iaudiostreamloader.h
+	"ik_IRefCounted.h"
+	"ik_IFileReader.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_ifilereader.h
+	"ik_IRefCounted.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isoundstopeventreceiver.h
+	"ik_IRefCounted.h"
+	"ik_SAudioStreamFormat.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_isounddevicelist.h
+	"ik_IRefCounted.h"
+
+1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\snds\ik_iaudiorecorder.h
+	"ik_IRefCounted.h"
+	"ik_ISoundSource.h"
+
+1557255758 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\levels.cpp
+	"Levels.h"
+
+1557255758 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\levels.h
+	<GLScene.h>
+
+1557255758 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\particles.cpp
+	"Particles.h"
+
+1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\sounds.cpp
+	"Sounds.h"
 
