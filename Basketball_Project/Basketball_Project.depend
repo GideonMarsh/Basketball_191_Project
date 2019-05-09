@@ -89,7 +89,7 @@
 1552946262 source:c:\users\mnutt\desktop\basketball_191_project\basketball_project\src\timer.cpp
 	"Timer.h"
 
-1557367282 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\main.cpp
+1557369939 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
@@ -148,7 +148,7 @@
 	<GL/gl.h>
 	<iostream>
 
-1557368718 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\inputs.cpp
+1557368890 source:c:\users\gideon\documents\github\basketball_191_project\basketball_project\src\inputs.cpp
 	"Inputs.h"
 	"GLScene.h"
 

@@ -382,20 +382,18 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 				}
 			}
 
+			//13 is hex for enter
+			if(keys[13]){                          //If the enter key was pressed then go to menu scene.
 
-                //13 is hex for enter
-                if(Scene->landingFlag == true && keys[13])
-                {                          //If the enter key was pressed then go to menu scene.
-
-                   Scene->landingFlag =false;
-                   Scene->menuFlag=true;
-                   Scene->gameFlag=false;
-                   Scene->helpFlag = false;
-                   Scene->exitFlag = false;
-                }
+               Scene->landingFlag =false;
+               Scene->menuFlag=true;
+               Scene->gameFlag=false;
+               Scene->helpFlag = false;
+               Scene->exitFlag = false;
+           }
 
                 //If user pressed N in menu scene, then go to game
-               if(Scene->menuFlag == true && keys[78])
+               if(keys[78])
                {
                     Scene->landingFlag =false;
                     Scene->menuFlag=false;
@@ -406,13 +404,12 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
 
                }
 
-               //Menu is active and user presses escape, quit program
                if(Scene->menuFlag == true && keys[VK_ESCAPE])
                {
                    done = true;
                }
 
-               //If the game scene is active and the user presses escape, confirm if user wants to quit
+               //If the game scene is active and the user presses Q, go back to menu
                if(Scene->gameFlag == true && keys[VK_ESCAPE])
                {
                     Scene->landingFlag =false;
@@ -434,7 +431,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flagShoot=false;
                }
 
-               //If the user presses backspace to resume game, go back to game
+               //If the user confirms to resume game, go back to game
                if(Scene->exitFlag == true && keys[8])
                {
                    Scene->landingFlag =false;
@@ -444,7 +441,6 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
                }
-
                 //If help scene is active and user presses Q, go back to menu
                if(Scene->helpFlag == true && keys[81])
                {
@@ -456,19 +452,18 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flagShoot=false;
                }
 
-                //User pressed H for help
-                if(Scene->menuFlag == true && keys[72])
-                   {
-                        Scene->landingFlag =false;
-                        Scene->menuFlag=false;
-                        Scene->gameFlag=false;
-                        Scene->helpFlag=true;
-                        Scene->exitFlag = false;
-                        Scene->flagShoot=false;
+            //User pressed H for help
+            if(keys[72])
+               {
+                    Scene->landingFlag =false;
+                    Scene->menuFlag=false;
+                    Scene->gameFlag=false;
+                    Scene->helpFlag=true;
+                    Scene->exitFlag = false;
+                    Scene->flagShoot=false;
 
-                   }
-
-                 //Game is active and user presses h, go to help
+               }
+               //Game is active and user presses h, go to help
                 if(Scene->gameFlag == true && keys[72])
                 {
                         Scene->landingFlag =false;
@@ -478,8 +473,6 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                         Scene->exitFlag = false;
                         Scene->flagShoot=false;
                 }
-
-               }
                /*
             if(keys[VK_SPACE] && Scene->gameFlag == true) {
 
@@ -491,7 +484,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flagShoot=true;
 //                    Ply->action = "stand";
             }*/
-            //User pressed enter, resume game
+            //If help scene is active and user pressed r, resume game
             if(Scene->helpFlag == true && keys[82])
             {
                     Scene->landingFlag =false;
@@ -501,8 +494,6 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
             }
-
-
 
             //Shooting scene and user presses Q, quit game
             if(Scene->flagShoot == true && keys[81])
@@ -514,12 +505,6 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
             }
-<<<<<<< HEAD
-=======
-
-
-
->>>>>>> b3e83983aeeb1777c57bd0368ee647af9e72702b
 		}
 	}
 
