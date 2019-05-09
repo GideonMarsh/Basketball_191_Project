@@ -132,6 +132,8 @@ GLint GLScene::drawGLScene()
     glPushMatrix();
     menuPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
+
+    startingLevel();
   }
 
 
@@ -151,7 +153,10 @@ GLint GLScene::drawGLScene()
 
         Ply->drawPlayer();
         KbMs->checkKeyDown();
-        KbMs->playerInput(Ply,Plx,Enm,0.004);
+        if (KbMs->playerInput(Ply,Plx,Enm,0.004)) {
+            gameFlag = false;
+            flagShoot = true;
+        }
         Ply->playerActions();
 
          /* ---------------------Enemy Drawing---------------------*/
@@ -206,15 +211,21 @@ GLint GLScene::drawGLScene()
         if (Gc->timeAction()) {
             // Code for running out of time goes here
         }
+        if (Ply->actionCounter < 2) Ply->action = "stand";
+
         Gc->drawClock();
 
+        KbMs->checkKeyDown();
+        if (KbMs->checkShot(Ply)) {
+            // code for player making the shot
+            // if shot failed but player still has time left, set player action to "stand" to enable another shot to be taken
+        }
+        Ply->playerActions();
 
         glPushMatrix();
-
-        KbMs->checkKeyDown();
-
-        Ply->playerActions();
         shooterView->drawSlide(screenWidth, screenHeight);
+        glPopMatrix();
+
         if(Ply->win==true){
 
             pcl->generateParticles();
@@ -228,16 +239,6 @@ GLint GLScene::drawGLScene()
        // Ply->action = "shoot";
         Ply->drawPlayer();
         glPopMatrix();
-
-
-
-
-        glPopMatrix();
-
-
-
-
-
 
     }
     if (takenShot) {
@@ -326,7 +327,10 @@ void GLScene::startingLevel()
     enemySpeed = 0.006;
     gameTime = 30.0;
 
-    Ply->xPos = Ply->yPos = -0.3;
+    Ply->xPos = -0.3;
+    Ply->yPos = -0.05;
+    Plx->xMax = 0.4;
+    Plx->xMin = 0.0;
 
     for (int i = 0; i < enmNum; i++) {
         Enm[i].placeEnemy((((rand() % 23) + 5) / 10.0),(((rand() % 8) - 4) / 10.0),-1.0);

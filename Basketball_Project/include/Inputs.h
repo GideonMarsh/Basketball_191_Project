@@ -22,11 +22,14 @@ class Inputs
         void mouseEventMove(Model *, double, double);
 
         void keyEnv(Parallax *,float);                    // for parallax movement (moving the background using the keys)
-        void playerInput(Player *, Parallax*, Enemy*, float);
+        bool playerInput(Player *, Parallax*, Enemy*, float);
 
         //void enemyMove(Enemy *, float, float);
 
         void checkKeyDown();
+
+        bool checkShot(Player *);
+        bool canShoot;
 
         double prev_mouse_X;
         double prev_mouse_Y;

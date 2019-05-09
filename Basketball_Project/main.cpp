@@ -463,6 +463,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->flagShoot=false;
 
                }
+               /*
             if(keys[VK_SPACE] && Scene->gameFlag == true) {
 
                     Scene->landingFlag =false;
@@ -472,14 +473,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=true;
 //                    Ply->action = "stand";
-            }
-             if(keys[VK_SPACE] && Scene->flagShoot == true) {
-                    Scene->takenShot = true;
-
-//                    Ply->action = "stand";
-            }
-
-
+            }*/
             //User pressed enter, resume game
             if(Scene->helpFlag == true && keys[82])
             {
@@ -512,15 +506,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
             }
-
-
-
-
-
 		}
-
-
-
 	}
 
 	// Shutdown

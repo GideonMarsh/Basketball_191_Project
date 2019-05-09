@@ -144,19 +144,14 @@ void Player::playerActions()
    //    Need to figure out proper frames for shooting animation
     //NEED TO MAKE SHOOT ANIMATION PLAY ONLY ONCE
 
-        if (actionCounter != 3) {
+        if (actionCounter < 3) {
             actionCounter = 3;
         }
 
-        if (xMax != 1.0) {
+        if (xMax < 1.0) {
         xMin += 1.0/animateFrames;
         xMax += 1.0/animateFrames;
         }
-
-
-//        else {
-//            action = "stand";
-//        }
 
 
 

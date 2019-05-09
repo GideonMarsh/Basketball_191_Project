@@ -16,6 +16,8 @@ Inputs::Inputs()
     move_up = false;
     move_down = false;
     shoot = false;
+
+    canShoot = false;
 }
 
 Inputs::~Inputs()
@@ -45,6 +47,9 @@ void Inputs::keyPressed(Model * Mdl)
 
 void Inputs::keyUp()
 {
+    if (wParam == VK_SPACE) {
+        canShoot = true;
+    }
     /*
     switch(wParam) {
     case VK_LEFT:
@@ -149,8 +154,9 @@ void Inputs::checkKeyDown()
     move_right = (GetKeyState(VK_RIGHT) & 0x8000) ? true : false;
     move_up = (GetKeyState(VK_UP) & 0x8000) ? true : false;
     move_down = (GetKeyState(VK_DOWN) & 0x8000) ? true : false;
+    shoot = (GetKeyState(VK_SPACE) & 0x8000) ? true : false;
 }
-void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
+bool Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
 {
     /*
     switch(wParam) {
@@ -213,11 +219,27 @@ void Inputs::playerInput(Player* ply, Parallax* plx, Enemy* enm, float speed)
                 ply->playerTranslate(0.0, -0.015);
             }
         }
-//        if (shoot && ->Scene->flagShoot) {
-//            ply->action = "shoot";
-//        }
     }
+
+    if (shoot && ply->xPos > -0.15 && ply->yPos < 0.05 && ply->yPos > -0.2) {
+        canShoot = false;
+        shoot = false;
+        return true;
+    }
+    shoot = false;
+    return false;
 }
+
+bool Inputs::checkShot(Player* ply)
+{
+    if (shoot && canShoot && ply->actionCounter < 3) {
+        ply->action = "shoot";
+        canShoot = false;
+        return true;
+    }
+    return false;
+}
+
 
 
 /*void Inputs::enemyMove(Enemy * enms, float xPos, float yPos)
