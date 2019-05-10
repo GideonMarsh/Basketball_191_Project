@@ -229,15 +229,6 @@ GLint GLScene::drawGLScene()
         }
 
 
-
-        //Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
-        //Gc->drawClock();
-
-
-
-        //If statement for clock is still running or not
-        //If clock is greater than 0 seconds, game scene will still be active
-        //Else clock is 0, then game over
     }
 
 
@@ -299,13 +290,15 @@ GLint GLScene::drawGLScene()
             shooterView->drawSlide(screenWidth, screenHeight);
             glPopMatrix();
 
-            if(Ply->win==true){
+           /* if(Ply->win==true){
 
                 pcl->generateParticles();
                 pcl->drawParticle();
                 pcl->lifeTime();
 
             }
+            */
+
             glPushMatrix();
             Ply->xPos=0.18;
             Ply->yPos=-0.38;
