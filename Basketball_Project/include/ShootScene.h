@@ -14,11 +14,12 @@ class ShootScene
 
         GLvoid sceneInit(char*);
         GLvoid drawSlide(GLfloat, GLfloat);
+        GLvoid drawShotUI();
 
         GLfloat popUpW, popUpH;
         GLint pages;
         float xMax, xMin, yMax, yMin, shotFloat;
-        bool moveUp, moveDown;
+        bool moveUp, moveDown, winSpace;
 
         Timer *Time = new Timer();
 

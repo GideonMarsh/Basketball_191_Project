@@ -11,6 +11,7 @@ ShootScene::ShootScene()
     shotFloat = 0.0;
     bool moveUp = true;
     bool moveDown = false;
+    bool winSpace = false;
 }
 
 ShootScene::~ShootScene()
@@ -66,11 +67,18 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
     glEnd();
     glPopMatrix();
 
+    drawShotUI();
 
 
-	glColor3f(1, 0, 0);
+
+
+}
+GLvoid ShootScene::drawShotUI()
+{
+    glColor3f(1, 0, 0);
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
-	//Trapezoid
+	//Larger rectangle, the whole aiming meter
+	glColor3f(1, 0, 0);
 	glVertex3f(1.9f, -1.5f, -5.0f);
 	glVertex3f(2.2f, -1.5f, -5.0f);
 	glVertex3f(2.2f, -0.2f, -5.0f);
@@ -79,11 +87,20 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 
 	glColor3f(1, 0, 0);
 	glBegin(GL_TRIANGLES); //Begin triangle coordinates
-	//Triangle
+	//Triangle -- shows timing of aim
 	glVertex3f(1.8f, -1.5f + shotFloat, -5.0f);
 	glVertex3f(1.6f, -1.3f + shotFloat, -5.0f);
 	glVertex3f(1.6f, -1.7f + shotFloat, -5.0f);
 	glEnd(); //End triangle coordinates
+
+	glBegin(GL_QUADS); //Begin quadrilateral coordinates
+	//Smaller rectangle- player shoots here to score
+	glColor3f(1, 0, 0);
+	glVertex3f(1.9f, -0.7f, -5.0f);
+	glVertex3f(2.4f, -0.7f, -5.0f);
+	glVertex3f(2.4f, -0.4f, -5.0f);
+	glVertex3f(1.9f, -0.4f, -5.0f);
+	glEnd();
 
 	//shotFloat+= .01;
     if (moveUp) {
@@ -100,7 +117,10 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
             moveDown = false;
         }
     }
+    if (shotFloat > 0.8 && shotFloat < 1.1) {
+        winSpace = true;
+    }
 
    // Time->reset();
-
 }
+
