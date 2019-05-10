@@ -13,9 +13,10 @@ class ShootScene
         TextureLoader* texture = new TextureLoader();
         TextureLoader* texture2 = new TextureLoader();
         TextureLoader* texture3 = new TextureLoader();
+        TextureLoader* texture4 = new TextureLoader();
 
         GLvoid sceneInit(char*);
-        GLvoid UIInit(char*, char*);
+        GLvoid UIInit(char*, char*, char*);
         GLvoid drawSlide(GLfloat, GLfloat);
         GLvoid drawShotUI();
 

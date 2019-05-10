@@ -25,10 +25,11 @@ GLvoid ShootScene::sceneInit(char* fileName)
     Time->start();
     moveUp = true;
 }
-GLvoid ShootScene::UIInit(char* fileName2, char* fileName3)
+GLvoid ShootScene::UIInit(char* fileName2, char* fileName3, char* fileName4)
 {
     texture2->loadTexture(fileName2);
     texture3->loadTexture(fileName3);
+    texture4->loadTexture(fileName4);
 }
 
 GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
@@ -83,22 +84,25 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 GLvoid ShootScene::drawShotUI()
 {
     glColor3f(1, 0, 0);
-<<<<<<< HEAD
+//<<<<<<< HEAD
     texture2->binder();
  //   glScaled(.5,.5,1.0);
-=======
+//=======
 
->>>>>>> 961db39040b034f58c19cdf576d4cf88b028e37d
+//>>>>>>> 961db39040b034f58c19cdf576d4cf88b028e37d
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Larger rectangle, the whole aiming meter
 	glColor3f(1, 0, 0);
+	glTexCoord2f(0,0);
 	glVertex3f(1.9f, -1.5f, -5.0f);
 	glVertex3f(2.2f, -1.5f, -5.0f);
+	glTexCoord2f(1,1);
 	glVertex3f(2.2f, -0.2f, -5.0f);
 	glVertex3f(1.9f, -0.2f, -5.0f);
 	glEnd();
 
 	glColor3f(1, 0, 0);
+	texture4->binder();
 	glBegin(GL_TRIANGLES); //Begin triangle coordinates
 	//Triangle -- shows timing of aim
 	glVertex3f(1.8f, -1.5f + shotFloat, -5.0f);
@@ -117,6 +121,7 @@ GLvoid ShootScene::drawShotUI()
 	glEnd();
 
 	//shotFloat+= .01;
+
     if (moveUp) {
         shotFloat += shotSpeed;
         if (shotFloat > 1.3) {
