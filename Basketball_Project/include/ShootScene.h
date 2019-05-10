@@ -3,6 +3,7 @@
 
 #include <GL/gl.h>
 #include <TextureLoader.h>
+#include<Timer.h>
 
 class ShootScene
 {
@@ -16,7 +17,10 @@ class ShootScene
 
         GLfloat popUpW, popUpH;
         GLint pages;
-        float xMax, xMin, yMax, yMin;
+        float xMax, xMin, yMax, yMin, shotFloat;
+        bool moveUp, moveDown;
+
+        Timer *Time = new Timer();
 
     protected:
 

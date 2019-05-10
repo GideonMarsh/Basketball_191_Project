@@ -8,6 +8,9 @@ ShootScene::ShootScene()
     yMax = 1.0;
     yMin = 0.0;
     pages = 0;
+    shotFloat = 0.0;
+    bool moveUp = true;
+    bool moveDown = false;
 }
 
 ShootScene::~ShootScene()
@@ -17,6 +20,8 @@ ShootScene::~ShootScene()
 GLvoid ShootScene::sceneInit(char* fileName)
 {
     texture->loadTexture(fileName);
+    Time->start();
+    moveUp = true;
 }
 
 GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
@@ -61,5 +66,37 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
     glEnd();
     glPopMatrix();
 
+    glBegin(GL_QUADS); //Begin quadrilateral coordinates
+	//Trapezoid
+	glVertex3f(1.9f, -1.5f, -5.0f);
+	glVertex3f(2.2f, -1.5f, -5.0f);
+	glVertex3f(2.2f, -0.2f, -5.0f);
+	glVertex3f(1.9f, -0.2f, -5.0f);
+	glEnd();
+
+	glBegin(GL_TRIANGLES); //Begin triangle coordinates
+	//Triangle
+	glVertex3f(1.8f, -1.5f + shotFloat, -5.0f);
+	glVertex3f(1.6f, -1.3f + shotFloat, -5.0f);
+	glVertex3f(1.6f, -1.7f + shotFloat, -5.0f);
+	glEnd(); //End triangle coordinates
+
+	//shotFloat+= .01;
+    if (moveUp) {
+        shotFloat += .01;
+        if (shotFloat > 1.3) {
+            moveUp = false;
+            moveDown = true;
+        }
+    }
+    if (moveDown && !moveUp) {
+        shotFloat -= .01f;
+        if (shotFloat < 0) {
+            moveUp = true;
+            moveDown = false;
+        }
+    }
+
+   // Time->reset();
 
 }
