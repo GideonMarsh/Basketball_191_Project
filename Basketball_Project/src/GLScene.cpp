@@ -37,6 +37,7 @@ GLScene::GLScene()
     exitFlag = false; //Confirm to quit scene
     flagShoot = false; //Shoot screen
     takenShot = false; //True when player hits space while on shot screen
+    gameOverFlag = false;
 }
 
 GLScene::~GLScene()
@@ -102,6 +103,8 @@ GLint GLScene::initGL()
     //Initializing Shoot Scene
     shooterView->sceneInit("images/shoot.png");
 
+    gameOverPage->slideInit("images/gameOver.png");
+
     if(Snd->initSounds()) return false; // return false if sounds could not be initialized
 
     return true;
@@ -117,6 +120,9 @@ GLint GLScene::drawGLScene()
     Mdl->drawModel();                                    // draw the model from the model class
     glPopMatrix();
     */
+
+
+
 
   if(landingFlag) //If the flag of landing page is true, draw the landing scene
   {
@@ -137,20 +143,40 @@ GLint GLScene::drawGLScene()
   }
 
 
+ if(gameOverFlag)
+            {
+              glPushMatrix();
+             gameOverPage->drawSlide(screenWidth, screenHeight );
+                glPopMatrix(); }
 
 
+    //If game flag is true, draw game scene
     if(gameFlag)
-    {  //If game flag is true, draw game scene
+    {
         glPushMatrix();
         Plx->drawSquare(screenWidth,screenHeight);
         glPopMatrix();
 
         if (Gc->timeAction()) {
-            // Code for running out of time goes here
-            nextLevel();
+
+            // Code for when time runs out, go to game over scene
+            if(Gc->timeOver == true)
+            {
+
+                gameOverFlag = true;
+
+            }
+            else
+            {
+                //Code needed for if the player made a basket before time ran out, then move to next level
+
+                nextLevel();
+            }
+
         }
 
 
+        if(!gameOverFlag){
         Ply->drawPlayer();
         KbMs->checkKeyDown();
         if (KbMs->playerInput(Ply,Plx,Enm,0.004)) {
@@ -163,6 +189,7 @@ GLint GLScene::drawGLScene()
         //objTex->binder();
         for(int i=0;i<enmNum;i++){
 
+     //   glTranslated(Enm[i].xPos,Enm[i].yPos,Enm[i].zPos-i/100.0);
         Enm[i].drawEnemy();
         //Enm[i].action=0;
         //Enm[i].actions();
@@ -182,12 +209,31 @@ GLint GLScene::drawGLScene()
 
         Enm[i].checkCollision(Ply);
         }
+    }  // end if game over
+
+
+        if(gameOverFlag)
+        {
+
+          glPushMatrix();
+          gameOverPage->drawSlide(screenWidth, screenHeight );
+          glPopMatrix();
+
+        }
+
 
     /*-----------------------------------------End of Enemy drawing-----------*/
 
         Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
         Gc->drawClock();
+
+
+
+        //If statement for clock is still running or not
+        //If clock is greater than 0 seconds, game scene will still be active
+        //Else clock is 0, then game over
     }
+
 
     if(helpFlag)
     {
@@ -205,11 +251,13 @@ GLint GLScene::drawGLScene()
         glPopMatrix();
     }
 
+
     //KbMs->keyEnv(Plx,0.004);
 
     if(flagShoot) {
         if (Gc->timeAction()) {
             // Code for running out of time goes here
+
         }
         if (Ply->actionCounter < 2) Ply->action = "stand";
 
@@ -244,6 +292,8 @@ GLint GLScene::drawGLScene()
     if (takenShot) {
         Ply->action = "shoot";
     }
+
+
 }
 
 GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)
