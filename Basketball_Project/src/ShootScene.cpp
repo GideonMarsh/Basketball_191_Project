@@ -12,6 +12,7 @@ ShootScene::ShootScene()
     bool moveUp = true;
     bool moveDown = false;
     bool winSpace = false;
+    shotSpeed = 0.05;
 }
 
 ShootScene::~ShootScene()
@@ -106,14 +107,14 @@ GLvoid ShootScene::drawShotUI()
 
 	//shotFloat+= .01;
     if (moveUp) {
-        shotFloat += .02;
+        shotFloat += shotSpeed;
         if (shotFloat > 1.3) {
             moveUp = false;
             moveDown = true;
         }
     }
     if (moveDown && !moveUp) {
-        shotFloat -= .02f;
+        shotFloat -= shotSpeed;
         if (shotFloat < 0) {
             moveUp = true;
             moveDown = false;
@@ -121,6 +122,9 @@ GLvoid ShootScene::drawShotUI()
     }
     if (shotFloat > 0.8 && shotFloat < 1.1) {
         winSpace = true;
+    }
+    else {
+        winSpace = false;
     }
 
    // Time->reset();

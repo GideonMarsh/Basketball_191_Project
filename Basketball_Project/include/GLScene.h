@@ -35,6 +35,8 @@ class GLScene
         void startingLevel();
         void nextLevel();
 
+        bool checkWin;
+
     protected:
 
     private:

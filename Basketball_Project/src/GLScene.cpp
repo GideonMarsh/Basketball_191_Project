@@ -283,8 +283,7 @@ GLint GLScene::drawGLScene()
 
             KbMs->checkKeyDown();
             if (KbMs->checkShot(Ply)) {
-                // code for player making the shot
-                // if shot failed but player still has time left, set player action to "stand" to enable another shot to be taken
+                checkWin = shooterView->winSpace;
             }
             Ply->playerActions();
 
@@ -310,6 +309,18 @@ GLint GLScene::drawGLScene()
 
             if (takenShot) {
             Ply->action = "shoot";
+            }
+            if (Ply->actionCounter == 4) {
+                if (checkWin) {
+                    nextLevel();
+                    gameFlag = true;
+                    flagShoot = false;
+                    checkWin = false;
+                }
+                else {
+                    Ply->action = "stand";
+                    checkWin = false;
+                }
             }
         }
 
@@ -403,6 +414,8 @@ void GLScene::startingLevel()
     enemySpeed = 0.006;
     gameTime = 30.0;
 
+    shooterView->shotSpeed = 0.05;
+
     Ply->xPos = -0.3;
     Ply->yPos = -0.05;
     Plx->xMax = 0.4;
@@ -424,6 +437,8 @@ void GLScene::nextLevel()
 
     enmNum++;
     enmNum > 20 ? enmNum = 20 : NULL;
+
+    shooterView->shotSpeed += 0.008;
 
     enemySpeed = enemySpeed + 0.0002;
 
