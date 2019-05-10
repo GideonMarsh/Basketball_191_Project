@@ -176,6 +176,16 @@ GLint GLScene::drawGLScene()
         }
 
 
+
+        if(gameOverFlag)
+        {
+
+          glPushMatrix();
+          gameOverPage->drawSlide(screenWidth, screenHeight );
+          glPopMatrix();
+
+        }
+
         if(!gameOverFlag){
 
             Ply->drawPlayer();
@@ -212,22 +222,18 @@ GLint GLScene::drawGLScene()
             }
 
             /*-----------------------------------------End of Enemy drawing-----------*/
+
+
+            Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
+            Gc->drawClock();
         }
 
 
 
-        Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
-        Gc->drawClock();
+        //Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
+        //Gc->drawClock();
 
 
-        if(gameOverFlag)
-        {
-
-          glPushMatrix();
-          gameOverPage->drawSlide(screenWidth, screenHeight );
-          glPopMatrix();
-
-        }
 
         //If statement for clock is still running or not
         //If clock is greater than 0 seconds, game scene will still be active
