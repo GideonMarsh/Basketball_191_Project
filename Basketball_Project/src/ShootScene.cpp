@@ -66,6 +66,9 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
     glEnd();
     glPopMatrix();
 
+
+
+	glColor3f(1, 0, 0);
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Trapezoid
 	glVertex3f(1.9f, -1.5f, -5.0f);
@@ -74,6 +77,7 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 	glVertex3f(1.9f, -0.2f, -5.0f);
 	glEnd();
 
+	glColor3f(1, 0, 0);
 	glBegin(GL_TRIANGLES); //Begin triangle coordinates
 	//Triangle
 	glVertex3f(1.8f, -1.5f + shotFloat, -5.0f);
@@ -83,14 +87,14 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 
 	//shotFloat+= .01;
     if (moveUp) {
-        shotFloat += .01;
+        shotFloat += .02;
         if (shotFloat > 1.3) {
             moveUp = false;
             moveDown = true;
         }
     }
     if (moveDown && !moveUp) {
-        shotFloat -= .01f;
+        shotFloat -= .02f;
         if (shotFloat < 0) {
             moveUp = true;
             moveDown = false;
