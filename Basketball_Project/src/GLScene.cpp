@@ -64,6 +64,7 @@ GLint GLScene::initGL()
 
    /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm12.png");
+    Snd->playMusic("sounds/dance.mp3");
 
         for(int i=0;i<20;i++)
     {
@@ -98,7 +99,7 @@ GLint GLScene::initGL()
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/dribble.png");
     Gc->clockInit("images/game_clock.jpg");
-    Snd->playMusic("sounds/dance.mp3");
+
     startingLevel();
 
     //Initializing Shoot Scene
