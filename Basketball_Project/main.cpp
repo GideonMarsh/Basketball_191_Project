@@ -390,6 +390,8 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                Scene->gameFlag=false;
                Scene->helpFlag = false;
                Scene->exitFlag = false;
+               Scene->gameOverFlag = false;
+               Scene->flagShoot = false;
            }
 
                 //If user pressed N in menu scene, then go to game
@@ -419,6 +421,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = true;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
                }
 
                //If the user confirms to quit, go back to menu
@@ -430,6 +433,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
                }
 
                //If the user confirms to resume game, go back to game
@@ -441,6 +445,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
                }
                 //If help scene is active and user presses Q, go back to menu
                if(Scene->helpFlag == true && keys[81])
@@ -451,6 +456,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
                }
 
             //User pressed H for help
@@ -462,6 +468,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=true;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
 
                }
                //Game is active and user presses h, go to help
@@ -473,6 +480,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                         Scene->helpFlag=true;
                         Scene->exitFlag = false;
                         Scene->flagShoot=false;
+                        Scene->gameOverFlag=false;
                 }
                /*
             if(keys[VK_SPACE] && Scene->gameFlag == true) {
@@ -494,6 +502,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
             }
 
             //Shooting scene and user presses Q, quit game
@@ -505,6 +514,7 @@ int WINAPI WinMain(	HINSTANCE	hInstance,			// Instance
                     Scene->helpFlag=false;
                     Scene->exitFlag = false;
                     Scene->flagShoot=false;
+                    Scene->gameOverFlag=false;
             }
 
 

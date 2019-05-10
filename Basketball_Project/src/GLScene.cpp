@@ -177,39 +177,47 @@ GLint GLScene::drawGLScene()
 
 
         if(!gameOverFlag){
-        Ply->drawPlayer();
-        KbMs->checkKeyDown();
-        if (KbMs->playerInput(Ply,Plx,Enm,0.004)) {
-            gameFlag = false;
-            flagShoot = true;
+
+            Ply->drawPlayer();
+            KbMs->checkKeyDown();
+            if (KbMs->playerInput(Ply,Plx,Enm,0.004)) {
+                gameFlag = false;
+                flagShoot = true;
+            }
+            Ply->playerActions();
+
+             /* ---------------------Enemy Drawing---------------------*/
+            //objTex->binder();
+            for(int i=0;i<enmNum;i++){
+
+             //   glTranslated(Enm[i].xPos,Enm[i].yPos,Enm[i].zPos-i/100.0);
+                Enm[i].drawEnemy();
+                //Enm[i].action=0;
+                //Enm[i].actions();
+
+                /*
+                if(Enm[i].xPos<-0.5){
+                    Enm[i].xMove=0.01;
+                    Enm[i].action=0;
+                }
+                else if(Enm[i].xPos>0.5){
+                    Enm[i].xMove=-0.01;
+                    Enm[i].action=1;
+                }*/
+                //Enm[i].xPos+=Enm[i].xMove;
+
+                Enm[i].enemyMovement(Ply);
+
+                Enm[i].checkCollision(Ply);
+            }
+
+            /*-----------------------------------------End of Enemy drawing-----------*/
         }
-        Ply->playerActions();
 
-         /* ---------------------Enemy Drawing---------------------*/
-        //objTex->binder();
-        for(int i=0;i<enmNum;i++){
 
-     //   glTranslated(Enm[i].xPos,Enm[i].yPos,Enm[i].zPos-i/100.0);
-        Enm[i].drawEnemy();
-        //Enm[i].action=0;
-        //Enm[i].actions();
 
-        /*
-        if(Enm[i].xPos<-0.5){
-            Enm[i].xMove=0.01;
-            Enm[i].action=0;
-        }
-        else if(Enm[i].xPos>0.5){
-            Enm[i].xMove=-0.01;
-            Enm[i].action=1;
-        }*/
-        //Enm[i].xPos+=Enm[i].xMove;
-
-        Enm[i].enemyMovement(Ply);
-
-        Enm[i].checkCollision(Ply);
-        }
-    }  // end if game over
+        Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
+        Gc->drawClock();
 
 
         if(gameOverFlag)
@@ -220,14 +228,6 @@ GLint GLScene::drawGLScene()
           glPopMatrix();
 
         }
-
-
-    /*-----------------------------------------End of Enemy drawing-----------*/
-
-        Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
-        Gc->drawClock();
-
-
 
         //If statement for clock is still running or not
         //If clock is greater than 0 seconds, game scene will still be active
@@ -257,44 +257,69 @@ GLint GLScene::drawGLScene()
     if(flagShoot) {
         if (Gc->timeAction()) {
             // Code for running out of time goes here
+            if(Gc->timeOver == true)
+            {
+                gameOverFlag = true;
+            }
 
         }
-        if (Ply->actionCounter < 2) Ply->action = "stand";
 
-        Gc->drawClock();
 
-        KbMs->checkKeyDown();
-        if (KbMs->checkShot(Ply)) {
-            // code for player making the shot
-            // if shot failed but player still has time left, set player action to "stand" to enable another shot to be taken
-        }
-        Ply->playerActions();
+        if(gameOverFlag)
+        {
 
-        glPushMatrix();
-        shooterView->drawSlide(screenWidth, screenHeight);
-        glPopMatrix();
-
-        if(Ply->win==true){
-
-            pcl->generateParticles();
-            pcl->drawParticle();
-            pcl->lifeTime();
+          glPushMatrix();
+          gameOverPage->drawSlide(screenWidth, screenHeight );
+          glPopMatrix();
 
         }
-        glPushMatrix();
-        Ply->xPos=0.18;
-        Ply->yPos=-0.38;
-       // Ply->action = "shoot";
-        Ply->drawPlayer();
-        glPopMatrix();
+
+        if(!gameOverFlag)
+        {
+
+
+            if (Ply->actionCounter < 2) Ply->action = "stand";
+
+            Gc->drawClock();
+
+            KbMs->checkKeyDown();
+            if (KbMs->checkShot(Ply)) {
+                // code for player making the shot
+                // if shot failed but player still has time left, set player action to "stand" to enable another shot to be taken
+            }
+            Ply->playerActions();
+
+            glPushMatrix();
+            shooterView->drawSlide(screenWidth, screenHeight);
+            glPopMatrix();
+
+            if(Ply->win==true){
+
+                pcl->generateParticles();
+                pcl->drawParticle();
+                pcl->lifeTime();
+
+            }
+            glPushMatrix();
+            Ply->xPos=0.18;
+            Ply->yPos=-0.38;
+           // Ply->action = "shoot";
+            Ply->drawPlayer();
+            glPopMatrix();
+
+            if (takenShot) {
+            Ply->action = "shoot";
+            }
+        }
+
+
+
 
     }
-    if (takenShot) {
-        Ply->action = "shoot";
-    }
-
 
 }
+
+
 
 GLvoid GLScene::resizeGLScene(GLsizei width, GLsizei height)
 {

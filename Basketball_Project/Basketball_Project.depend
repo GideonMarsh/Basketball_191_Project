@@ -340,7 +340,7 @@
 
 1556066877 ated upstream
 
-1557438434 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
+1557472857 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\main.cpp
 	<windows.h>
 	<GLScene.h>
 	<stdlib.h>
@@ -370,9 +370,10 @@
 
 1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\common\include\soil.h
 
-1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\shootscene.h
+1557465167 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\shootscene.h
 	<GL/gl.h>
 	<TextureLoader.h>
+	<Timer.h>
 
 1557347127 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\clockdigit.cpp
 	"ClockDigit.h"
@@ -426,7 +427,7 @@
 1557176048 c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\include\gllight.h
 	<GLScene.h>
 
-1557437336 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\glscene.cpp
+1557472697 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\glscene.cpp
 	"GLScene.h"
 	<GLLight.h>
 	<Inputs.h>
@@ -475,7 +476,7 @@
 1557428908 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\player.cpp
 	"Player.h"
 
-1557359794 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\shootscene.cpp
+1557465167 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\shootscene.cpp
 	"ShootScene.h"
 
 1557176048 source:c:\users\kamar\onedrive\desktop\gameproject\basketball_191_project\basketball_project\src\slides.cpp
