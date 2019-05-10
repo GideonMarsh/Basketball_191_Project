@@ -439,7 +439,7 @@ void GLScene::nextLevel()
     enmNum++;
     enmNum > 20 ? enmNum = 20 : NULL;
 
-    shooterView->shotSpeed += 0.008;
+    shooterView->shotSpeed += 0.005;
 
     enemySpeed = enemySpeed + 0.0002;
 

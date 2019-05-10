@@ -83,12 +83,9 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 GLvoid ShootScene::drawShotUI()
 {
     glColor3f(1, 0, 0);
-<<<<<<< HEAD
     texture2->binder();
  //   glScaled(.5,.5,1.0);
-=======
 
->>>>>>> 961db39040b034f58c19cdf576d4cf88b028e37d
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Larger rectangle, the whole aiming meter
 	glColor3f(1, 0, 0);
