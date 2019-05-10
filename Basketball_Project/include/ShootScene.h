@@ -11,10 +11,14 @@ class ShootScene
         ShootScene();
         virtual ~ShootScene();
         TextureLoader* texture = new TextureLoader();
+        TextureLoader* texture2 = new TextureLoader();
+        TextureLoader* texture3 = new TextureLoader();
 
         GLvoid sceneInit(char*);
+        GLvoid UIInit(char*, char*);
         GLvoid drawSlide(GLfloat, GLfloat);
         GLvoid drawShotUI();
+
 
         GLfloat popUpW, popUpH;
         GLint pages;
@@ -22,6 +26,8 @@ class ShootScene
         bool moveUp, moveDown, winSpace;
 
         Timer *Time = new Timer();
+
+        TextureLoader *gradientTexture = new TextureLoader();
 
     protected:
 

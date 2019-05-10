@@ -24,6 +24,11 @@ GLvoid ShootScene::sceneInit(char* fileName)
     Time->start();
     moveUp = true;
 }
+GLvoid ShootScene::UIInit(char* fileName2, char* fileName3)
+{
+    texture2->loadTexture(fileName2);
+    texture3->loadTexture(fileName3);
+}
 
 GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 {
@@ -76,6 +81,8 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 GLvoid ShootScene::drawShotUI()
 {
     glColor3f(1, 0, 0);
+    texture2->binder();
+ //   glScaled(.5,.5,1.0);
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Larger rectangle, the whole aiming meter
 	glColor3f(1, 0, 0);
@@ -93,13 +100,14 @@ GLvoid ShootScene::drawShotUI()
 	glVertex3f(1.6f, -1.7f + shotFloat, -5.0f);
 	glEnd(); //End triangle coordinates
 
+	texture3->binder();
 	glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Smaller rectangle- player shoots here to score
 	glColor3f(1, 0, 0);
-	glVertex3f(1.9f, -0.7f, -5.0f);
-	glVertex3f(2.4f, -0.7f, -5.0f);
-	glVertex3f(2.4f, -0.4f, -5.0f);
-	glVertex3f(1.9f, -0.4f, -5.0f);
+	glVertex3f(1.9f, -0.7f, -4.999f);
+	glVertex3f(2.4f, -0.7f, -4.999f);
+	glVertex3f(2.4f, -0.4f, -4.999f);
+	glVertex3f(1.9f, -0.4f, -4.999f);
 	glEnd();
 
 	//shotFloat+= .01;

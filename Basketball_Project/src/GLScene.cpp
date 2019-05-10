@@ -102,6 +102,7 @@ GLint GLScene::initGL()
 
     //Initializing Shoot Scene
     shooterView->sceneInit("images/shoot.png");
+    shooterView->UIInit("images/yellow-red.png", "images/green.png");
 
     gameOverPage->slideInit("images/gameOver.png");
 
