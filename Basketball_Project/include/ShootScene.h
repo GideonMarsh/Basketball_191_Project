@@ -22,7 +22,7 @@ class ShootScene
 
         GLfloat popUpW, popUpH;
         GLint pages;
-        float xMax, xMin, yMax, yMin, shotFloat;
+        float xMax, xMin, yMax, yMin, shotFloat, shotSpeed;
         bool moveUp, moveDown, winSpace;
 
         Timer *Time = new Timer();

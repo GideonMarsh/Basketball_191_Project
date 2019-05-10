@@ -12,6 +12,7 @@ ShootScene::ShootScene()
     bool moveUp = true;
     bool moveDown = false;
     bool winSpace = false;
+    shotSpeed = 0.05;
 }
 
 ShootScene::~ShootScene()
@@ -77,12 +78,17 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
 
 
 
+
 }
 GLvoid ShootScene::drawShotUI()
 {
     glColor3f(1, 0, 0);
+<<<<<<< HEAD
     texture2->binder();
  //   glScaled(.5,.5,1.0);
+=======
+
+>>>>>>> 961db39040b034f58c19cdf576d4cf88b028e37d
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Larger rectangle, the whole aiming meter
 	glColor3f(1, 0, 0);
@@ -112,14 +118,14 @@ GLvoid ShootScene::drawShotUI()
 
 	//shotFloat+= .01;
     if (moveUp) {
-        shotFloat += .02;
+        shotFloat += shotSpeed;
         if (shotFloat > 1.3) {
             moveUp = false;
             moveDown = true;
         }
     }
     if (moveDown && !moveUp) {
-        shotFloat -= .02f;
+        shotFloat -= shotSpeed;
         if (shotFloat < 0) {
             moveUp = true;
             moveDown = false;
@@ -128,7 +134,9 @@ GLvoid ShootScene::drawShotUI()
     if (shotFloat > 0.8 && shotFloat < 1.1) {
         winSpace = true;
     }
+    else {
+        winSpace = false;
+    }
 
    // Time->reset();
 }
-

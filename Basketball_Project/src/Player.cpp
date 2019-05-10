@@ -152,6 +152,9 @@ void Player::playerActions()
         xMin += 1.0/animateFrames;
         xMax += 1.0/animateFrames;
         }
+        else {
+            actionCounter = 4;
+        }
 
 
 

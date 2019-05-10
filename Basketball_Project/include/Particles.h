@@ -3,6 +3,8 @@
 
 #include <GL/gl.h>
 
+#include <TextureLoader.h>
+
 
 #include <math.h>
 #include <stdlib.h>
@@ -52,9 +54,12 @@ class Particles
             float velocityX;
             float velocityY;
             float alpha;
+
+
         }Parts;
 
         Parts drops[MAX_DROPS];
+        TextureLoader *parTex = new TextureLoader();
 
         void drawParticle();            //drawing
         void lifeTime();                //update

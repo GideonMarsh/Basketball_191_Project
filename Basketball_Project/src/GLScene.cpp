@@ -10,6 +10,7 @@
 #include <Particles.h>
 #include <Sounds.h>
 
+
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
 Parallax *Plx = new Parallax();
@@ -63,6 +64,7 @@ GLint GLScene::initGL()
 
    /*-----------------------init enemy----------------------------*/
     enmTex->loadTexture("images/enm12.png");
+    Snd->playMusic("sounds/dance.mp3");
 
         for(int i=0;i<20;i++)
     {
@@ -130,7 +132,7 @@ GLint GLScene::drawGLScene()
     glPushMatrix();
     landingPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
-    Snd->playMusic("sounds/poss credits.mp3");
+
 
   }
 
@@ -230,15 +232,6 @@ GLint GLScene::drawGLScene()
         }
 
 
-
-        //Ply->knockedBack > 0 ? Ply->knockedBack -= 1 : NULL;        // used in calculating enemy collision
-        //Gc->drawClock();
-
-
-
-        //If statement for clock is still running or not
-        //If clock is greater than 0 seconds, game scene will still be active
-        //Else clock is 0, then game over
     }
 
 
@@ -291,8 +284,7 @@ GLint GLScene::drawGLScene()
 
             KbMs->checkKeyDown();
             if (KbMs->checkShot(Ply)) {
-                // code for player making the shot
-                // if shot failed but player still has time left, set player action to "stand" to enable another shot to be taken
+                checkWin = shooterView->winSpace;
             }
             Ply->playerActions();
 
@@ -300,13 +292,15 @@ GLint GLScene::drawGLScene()
             shooterView->drawSlide(screenWidth, screenHeight);
             glPopMatrix();
 
-            if(Ply->win==true){
+           /* if(Ply->win==true){
 
                 pcl->generateParticles();
                 pcl->drawParticle();
                 pcl->lifeTime();
 
             }
+            */
+
             glPushMatrix();
             Ply->xPos=0.18;
             Ply->yPos=-0.38;
@@ -316,6 +310,18 @@ GLint GLScene::drawGLScene()
 
             if (takenShot) {
             Ply->action = "shoot";
+            }
+            if (Ply->actionCounter == 4) {
+                if (checkWin) {
+                    nextLevel();
+                    gameFlag = true;
+                    flagShoot = false;
+                    checkWin = false;
+                }
+                else {
+                    Ply->action = "stand";
+                    checkWin = false;
+                }
             }
         }
 
@@ -409,6 +415,8 @@ void GLScene::startingLevel()
     enemySpeed = 0.006;
     gameTime = 30.0;
 
+    shooterView->shotSpeed = 0.05;
+
     Ply->xPos = -0.3;
     Ply->yPos = -0.05;
     Plx->xMax = 0.4;
@@ -430,6 +438,8 @@ void GLScene::nextLevel()
 
     enmNum++;
     enmNum > 20 ? enmNum = 20 : NULL;
+
+    shooterView->shotSpeed += 0.008;
 
     enemySpeed = enemySpeed + 0.0002;
 
