@@ -13,7 +13,7 @@ void Particles::drawParticle()
 {
     int i=0;
     glPointSize(4);
-
+    parTex->binder();
     glBegin(GL_POINTS);
 
 
@@ -49,7 +49,7 @@ void Particles::lifeTime()
 
 void Particles::generateParticles()
 {
-
+    parTex->loadTexture("images/blue.png");
     int newDrops = rand()%600+1;
 
     if((numDrops + newDrops) > MAX_DROPS)

@@ -10,6 +10,7 @@
 #include <Particles.h>
 #include <Sounds.h>
 
+
 Inputs *KbMs = new Inputs();
 Model *Mdl = new Model();
 Parallax *Plx = new Parallax();
@@ -97,7 +98,7 @@ GLint GLScene::initGL()
     Plx->parallaxInit("images/Court_Temp.png");
     Ply->playerInit("images/dribble.png");
     Gc->clockInit("images/game_clock.jpg");
-
+    Snd->playMusic("sounds/dance.mp3");
     startingLevel();
 
     //Initializing Shoot Scene
@@ -129,7 +130,7 @@ GLint GLScene::drawGLScene()
     glPushMatrix();
     landingPage->drawSlide(screenWidth, screenHeight );
     glPopMatrix();
-    Snd->playMusic("sounds/poss credits.mp3");
+
 
   }
 

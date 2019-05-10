@@ -70,12 +70,16 @@ GLvoid ShootScene::drawSlide(GLfloat w, GLfloat h)
     drawShotUI();
 
 
+<<<<<<< Updated upstream
 
 
 }
 GLvoid ShootScene::drawShotUI()
 {
     glColor3f(1, 0, 0);
+=======
+	glColor3f(10, 0, 0);
+>>>>>>> Stashed changes
     glBegin(GL_QUADS); //Begin quadrilateral coordinates
 	//Larger rectangle, the whole aiming meter
 	glColor3f(1, 0, 0);
