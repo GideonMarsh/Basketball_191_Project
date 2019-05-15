@@ -286,6 +286,12 @@ GLint GLScene::drawGLScene()
             KbMs->checkKeyDown();
             if (KbMs->checkShot(Ply)) {
                 checkWin = shooterView->winSpace;
+                if (checkWin == true) {
+                    shooterView->shotSpeed = 0;
+                }
+            }
+            if (checkWin == false) {
+                shooterView->shotSpeed = 0.05;
             }
             Ply->playerActions();
 
