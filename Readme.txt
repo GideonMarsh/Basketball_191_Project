@@ -1,5 +1,3 @@
-# Basketball_191_Project
-
 Basketball Team
 Team 3
 
